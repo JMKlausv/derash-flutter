@@ -22,21 +22,24 @@ class Hospitals extends StatelessWidget {
               child: ListView.builder(
                   itemCount: 15,
                   itemBuilder: (context, index) {
-                    return const Card(
+                    return Card(
                         elevation: 2,
                         child: ListTile(
-                          title: Padding(
+                          onTap: () {
+                            Navigator.of(context).pushNamed('hospital-detial');
+                          },
+                          title: const Padding(
                             padding: EdgeInsets.symmetric(vertical: 7),
                             child: Text(
                               'Zenbaba General Hospital',
                               style: TextStyle(fontSize: 20),
                             ),
                           ),
-                          trailing: Icon(
+                          trailing: const Icon(
                             Icons.call,
                             color: Colors.green,
                           ),
-                          subtitle: Text('2.14 km away'),
+                          subtitle: const Text('2.14 km away'),
                         ));
                   }))
         ],

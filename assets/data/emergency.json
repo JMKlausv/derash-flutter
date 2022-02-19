@@ -1,0 +1,31 @@
+{
+  "emergencies":[
+{
+  "name":"Allergy/Anaphulaxis",
+  "iconUrl":"assets/images/allergies_icon.png",
+  "description":[
+    {
+      "title":"WHAT TO DO FOR AN ALLERGY",
+      "imageUrl":"assets/images/allergies_icon.png",
+      "vedioUrl":"",
+      "content":"• Assess the casualty's signs and symptoms. Ask if she has any known allergy.\n• Remove the trigger if possible, or move the casualty from the trigger.\n• Treat any symptoms. Allow the casualty to take her own medication for a known allergy.\n• If you are at all concerned about the casualty's condition, seek medical advice.",
+      "isMain":true
+    },
+    {
+      "title":"WHAT TO DO FOR ANAPHYLAXIS",
+      "imageUrl":"",
+      "vedioUrl":"",
+      "content":"• Call for emergency help.\n• If the casualty's signs and symptoms. Ask if she/he has any known allergy.\n•Remove the trigger if possible, or move the casualty to take his/her own medication for a known allergy.\n•If you are at all concerned about the casualty's condition,seek medical advice. ",
+      "isMain":true
+    },
+    {
+      "title":"ALLERGY",
+      "imageUrl":"",
+      "vedioUrl":"",
+      "content":"An allergy is an abnormal reaction of the body's defense system (immune response) to a normally harmless 'trigger' substance (or allergen). An allergy can present itself as a mild itching, swelling, wheezing, or digestive condition, or can progress to full-blown anaphylaxis, or anaphylactic shock",
+      "isMain":false
+    }
+  ]
+}
+  ]
+}

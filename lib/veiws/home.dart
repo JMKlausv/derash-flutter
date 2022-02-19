@@ -18,16 +18,11 @@ class Home extends StatelessWidget {
               elevation: 5,
               child: Column(
                 children: [
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 5, vertical: 20),
-                    color: Colors.blue.shade200,
-                    child: Image.asset(
-                      'assets/images/logo.png',
+                  Image.asset(
+                    'assets/images/blue_health_logo.png',
 
-                      // color: Colors.blue,
-                      width: MediaQuery.of(context).size.width,
-                    ),
+                    // color: Colors.blue,
+                    width: MediaQuery.of(context).size.width,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -71,10 +66,10 @@ class Home extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).pushNamed('emergency-services');
                       },
-                      leading: const Icon(
-                        Icons.people_alt,
-                        size: 30,
-                        color: Colors.red,
+                      leading: Image.asset(
+                        'assets/images/emergency_contact.png',
+                        width: 35,
+                        height: 35,
                       ),
                       title: const Text(
                         'Emergency services',
@@ -90,7 +85,7 @@ class Home extends StatelessWidget {
                       },
                       leading: Image.asset(
                         'assets/images/CCE.png',
-                        width: 40,
+                        width: 50,
                       ),
                       title: const Text(
                         'Donate to Cardiac Center Ethiopia',
@@ -104,10 +99,10 @@ class Home extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).pushNamed('donate-blood');
                       },
-                      leading: const Icon(
-                        Icons.bloodtype,
-                        color: Colors.red,
-                        size: 30,
+                      leading: Image.asset(
+                        'assets/images/red_cross.png',
+                        width: 30,
+                        height: 30,
                       ),
                       title: const Text(
                         'Donate Blood',
@@ -119,10 +114,10 @@ class Home extends StatelessWidget {
                     elevation: 1,
                     child: ListTile(
                       onTap: () {},
-                      leading: const Icon(
-                        Icons.medical_services,
-                        color: Colors.red,
-                        size: 30,
+                      leading: Image.asset(
+                        'assets/images/med_kit.png',
+                        width: 30,
+                        height: 30,
                       ),
                       title: const Text(
                         'About First Aid',

@@ -1,7 +1,7 @@
-import 'package:derash/veiws/emergency.dart';
+import 'package:derash/veiws/emergency_page.dart';
 import 'package:derash/veiws/home.dart';
 import 'package:derash/veiws/hospitals.dart';
-import 'package:derash/veiws/profile.dart';
+import 'package:derash/veiws/account/profile.dart';
 import 'package:derash/widgets/side_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +18,7 @@ class _BottomNavState extends State<BottomNav> {
   final titles = ['Home', 'Emergency', 'Hospitals', 'Account'];
   @override
   Widget build(BuildContext context) {
-    final List<Widget> tabs = [Home(), Emergency(), Hospitals(), Profile()];
+    final List<Widget> tabs = [Home(), EmergencyPage(), Hospitals(), Profile()];
     return Scaffold(
       drawer: const SideBar(),
       appBar: AppBar(

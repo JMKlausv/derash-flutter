@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DonateBlood extends StatelessWidget {
   const DonateBlood({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final String phone = '+251983424242';
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -20,11 +22,8 @@ class DonateBlood extends StatelessWidget {
             children: [
               Center(
                 child: Image.asset(
-                  'assets/images/blood_bank_logo.png',
+                  'assets/images/national_blood_bank.png',
                 ),
-              ),
-              const SizedBox(
-                height: 20,
               ),
               const Text(
                 'National Blood Bank Service',
@@ -53,7 +52,9 @@ class DonateBlood extends StatelessWidget {
               Card(
                 elevation: 2,
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    launch('https://www.facebook.com/ENBBS/');
+                  },
                   leading: const Icon(
                     Icons.facebook,
                     color: Colors.blue,
@@ -69,14 +70,16 @@ class DonateBlood extends StatelessWidget {
               Card(
                 elevation: 2,
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    launch('tel:$phone');
+                  },
                   leading: const Icon(
                     Icons.phone,
                     color: Colors.green,
                   ),
-                  title: const Text(
-                    '+251983424242',
-                    style: TextStyle(
+                  title: Text(
+                    phone,
+                    style: const TextStyle(
                       fontSize: 23,
                     ),
                   ),
