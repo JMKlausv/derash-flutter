@@ -38,6 +38,10 @@ dependencies:
   hive: ^2.0.5
   hive_flutter: ^1.1.0
   path_provider: ^2.0.4
+  image_picker: ^0.8.4+1
+  google_maps_flutter: ^2.0.9
+  geolocator: ^8.0.5
+  flutter_polyline_points: ^1.0.0
 
 
 dev_dependencies:
@@ -102,6 +106,7 @@ flutter:
     - assets/images/pin_point.png
     - assets/images/telegram.png
     - assets/data/emergency.json
+    - assets/data/hospital.json
 
 
 

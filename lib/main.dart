@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:derash/helper_functions/boxes.dart';
+import 'package:derash/models/hospital.dart';
 import 'package:derash/veiws/about_us.dart';
 import 'package:derash/veiws/account/allergies.dart';
 import 'package:derash/veiws/bottom_nav.dart';
@@ -25,11 +26,14 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(EmergencyAdapter());
   Hive.registerAdapter(UserAdapter());
+  Hive.registerAdapter(HospitalAdapter());
 
   await Hive.openBox<Emergency>('emergencies');
   await Hive.box<Emergency>('emergencies').clear();
   await Hive.openBox<User>('user');
-
+  await Hive.openBox<Hospital>('hospital');
+  await Hive.box<Hospital>('hospital').clear();
+  //fetching initial emergency data from json file
   final String response =
       await rootBundle.loadString('assets/data/emergency.json');
   final data = await json.decode(response);
@@ -41,6 +45,22 @@ void main() async {
         iconUrl: emergency['iconUrl'],
         description: emergency['description']);
     box.add(singleEmergency);
+  }
+  //fetching initial hospital data from json file
+
+  final String response2 =
+      await rootBundle.loadString('assets/data/hospital.json');
+  final hospitalData = await json.decode(response2);
+  final List hospitals = hospitalData['hospitals'];
+  final box2 = Boxes.getHospitals();
+  for (var hospital in hospitals) {
+    final singleHospital = Hospital(
+        name: hospital['name'],
+        location: hospital['location'],
+        phone: hospital['phone'],
+        facebook: hospital['facebook'],
+        telegram: hospital['telegram']);
+    box2.add(singleHospital);
   }
 
   runApp(const MyApp());
@@ -68,7 +88,6 @@ class MyApp extends StatelessWidget {
           'allergies': (context) => Allergies(),
           'medical-conditions': (context) => MedicalConditions(),
           'current-medications': (context) => CurrentMedication(),
-          'hospital-detial': (context) => HospitalDetail(),
           'about-us': (context) => AboutUs(),
           'edit-profile': (context) => EditProfile(),
         });

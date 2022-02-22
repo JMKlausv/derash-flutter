@@ -1,0 +1,14 @@
+{
+  "hospitals":[
+    {
+      "name": "Zenbaba General Hospital",
+      "location": {
+        "longitude":38.764989878060646,
+        "latitude":8.95535398228028
+      },
+      "phone": "+251984848",
+      "facebook":"Zenbaba",
+      "telegram":"@zenbaba_hospital"
+    }
+  ]
+}

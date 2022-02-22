@@ -1,5 +1,9 @@
+import 'dart:io';
+import 'package:derash/helper_functions/boxes.dart';
+import 'package:derash/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({Key? key}) : super(key: key);
@@ -11,29 +15,50 @@ class SideBar extends StatelessWidget {
       color: Colors.red,
       child: Column(
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.3,
-            child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-              CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 30,
-                child: Image.asset(
-                  'assets/images/med_kit.png',
-                  width: 30,
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(8),
-                child: Text(
-                  'Your Name',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              )
-            ]),
-          ),
+          ValueListenableBuilder<Box<User>>(
+              valueListenable: Boxes.getUser().listenable(),
+              builder: (context, box, _) {
+                final user = box.values.cast<User>();
+                return SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage: user.isNotEmpty &&
+                                  user.first.profileImageUrl != ''
+                              ? FileImage(File(user.first.profileImageUrl))
+                              : null,
+                          radius: 30,
+                          child:
+                              user.isEmpty || user.first.profileImageUrl == ''
+                                  ? Image.asset(
+                                      'assets/images/med_kit.png',
+                                      width: 30,
+                                    )
+                                  : Container(),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: user.isEmpty
+                              ? const Text(
+                                  'Your Name',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.white),
+                                )
+                              : Text(
+                                  user.first.userName,
+                                  style: const TextStyle(
+                                      fontSize: 20, color: Colors.white),
+                                ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        )
+                      ]),
+                );
+              }),
           Container(
             height: MediaQuery.of(context).size.height * 0.7,
             width: MediaQuery.of(context).size.width,
