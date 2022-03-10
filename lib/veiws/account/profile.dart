@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -19,6 +20,7 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   final box = Boxes.getUser();
   late XFile imageFile;
+  late String userGender;
 
   handleTakePhoto() async {
     Navigator.pop(context);
@@ -48,15 +50,19 @@ class _ProfileState extends State<Profile> {
     // save the path to image in db
     if (box.values.isNotEmpty) {
       final user = box.values.first;
-      final oldFile = File(user.profileImageUrl);
-      await oldFile.delete();
+
+      if (user.profileImageUrl != '') {
+        final oldFile = File(user.profileImageUrl);
+        await oldFile.delete();
+      }
+
       user.profileImageUrl = path;
       await user.save();
     } else {
       final newUser = User()
         ..userName = ''
         ..age = ''
-        ..sex = ''
+        ..sex = -1
         ..bloodGroup = ''
         ..currentMedications = []
         ..medicalConditions = []
@@ -75,25 +81,27 @@ class _ProfileState extends State<Profile> {
         context: context,
         builder: (ctx) {
           return SimpleDialog(
-            title: const Text(
-              "Edit Profile",
+            title: Text(
+              AppLocalizations.of(context)!.edit_profile,
               textAlign: TextAlign.center,
             ),
             children: <Widget>[
               SimpleDialogOption(
-                  child: const Text("Photo with Camera"),
+                  child: Text(
+                    AppLocalizations.of(context)!.camera_picker,
+                    textAlign: TextAlign.center,
+                  ),
                   onPressed: () async {
                     await handleTakePhoto();
                   }),
               SimpleDialogOption(
-                  child: const Text("Image from Gallery"),
+                  child: Text(
+                    AppLocalizations.of(context)!.gallery_picker,
+                    textAlign: TextAlign.center,
+                  ),
                   onPressed: () async {
                     await handleChooseFromGallery();
                   }),
-              SimpleDialogOption(
-                child: const Text("Cancel"),
-                onPressed: () => Navigator.pop(context),
-              )
             ],
           );
         });
@@ -101,12 +109,19 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    final gender = [
+      AppLocalizations.of(context)!.sex_female,
+      AppLocalizations.of(context)!.sex_male,
+    ];
     return ValueListenableBuilder<Box<User>>(
         valueListenable: Boxes.getUser().listenable(),
         builder: (context, box, _) {
           final user = box.values.cast<User>();
           if (user.isNotEmpty && user.first.profileImageUrl != '') {
             imageFile = XFile(user.first.profileImageUrl);
+          }
+          if (user.isNotEmpty) {
+            userGender = gender[user.first.sex];
           }
 
           return Padding(
@@ -153,9 +168,9 @@ class _ProfileState extends State<Profile> {
                           height: 15,
                         ),
                         user.isEmpty
-                            ? const Text(
-                                'Your Name',
-                                style: TextStyle(fontSize: 25),
+                            ? Text(
+                                AppLocalizations.of(context)!.name_hint,
+                                style: const TextStyle(fontSize: 25),
                               )
                             : Text(
                                 user.first.userName,
@@ -165,21 +180,21 @@ class _ProfileState extends State<Profile> {
                           height: 5,
                         ),
                         Text(
-                          'sex - ${user.isNotEmpty ? user.first.sex : ''}',
+                          '${AppLocalizations.of(context)!.sex_empty_hint} ${user.isNotEmpty ? userGender : ''}',
                           style: const TextStyle(fontSize: 18),
                         ),
                         const SizedBox(
                           height: 3,
                         ),
                         Text(
-                          'Age -  ${user.isNotEmpty ? user.first.age : ''}',
+                          '${AppLocalizations.of(context)!.age_empty_hint}  ${user.isNotEmpty ? user.first.age : ''}',
                           style: const TextStyle(fontSize: 18),
                         ),
                         const SizedBox(
                           height: 3,
                         ),
                         Text(
-                          'Blood group -  ${user.isNotEmpty ? user.first.bloodGroup : ''}',
+                          '${AppLocalizations.of(context)!.blood_group_empty_hint}  ${user.isNotEmpty ? user.first.bloodGroup : ''}',
                           style: const TextStyle(fontSize: 18),
                         )
                       ],
@@ -193,9 +208,9 @@ class _ProfileState extends State<Profile> {
                     onPressed: () {
                       Navigator.of(context).pushNamed('edit-profile');
                     },
-                    child: const Text(
-                      'Edit Your profile',
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.edit_profile,
+                      style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w400,
                           color: Colors.black),
@@ -220,9 +235,10 @@ class _ProfileState extends State<Profile> {
                             size: 30,
                             color: Colors.red,
                           ),
-                          title: const Text(
-                            'Emergency contacts',
-                            style: TextStyle(fontSize: 20),
+                          title: Text(
+                            AppLocalizations.of(context)!
+                                .emergency_contact_title,
+                            style: const TextStyle(fontSize: 20),
                           ),
                         ),
                       ),
@@ -236,9 +252,9 @@ class _ProfileState extends State<Profile> {
                             'assets/images/allergies_icon.png',
                             width: 30,
                           ),
-                          title: const Text(
-                            'Allergies',
-                            style: TextStyle(fontSize: 20),
+                          title: Text(
+                            AppLocalizations.of(context)!.allergies_title,
+                            style: const TextStyle(fontSize: 20),
                           ),
                         ),
                       ),
@@ -254,9 +270,9 @@ class _ProfileState extends State<Profile> {
                             width: 25,
                             height: 25,
                           ),
-                          title: const Text(
-                            'Medical Conditions',
-                            style: TextStyle(fontSize: 20),
+                          title: Text(
+                            AppLocalizations.of(context)!.conditions_title,
+                            style: const TextStyle(fontSize: 20),
                           ),
                         ),
                       ),
@@ -272,9 +288,9 @@ class _ProfileState extends State<Profile> {
                             width: 30,
                             height: 30,
                           ),
-                          title: const Text(
-                            'Current Medications',
-                            style: TextStyle(fontSize: 20),
+                          title: Text(
+                            AppLocalizations.of(context)!.medication_title,
+                            style: const TextStyle(fontSize: 20),
                           ),
                         ),
                       )

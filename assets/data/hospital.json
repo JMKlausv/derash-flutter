@@ -3,12 +3,14 @@
     {
       "name": "Zenbaba General Hospital",
       "location": {
-        "longitude":38.764989878060646,
-        "latitude":8.95535398228028
+       "latitude": 8.950246454018668,
+        "longitude": 38.719620780171056
+      
       },
       "phone": "+251984848",
       "facebook":"Zenbaba",
-      "telegram":"@zenbaba_hospital"
+      "telegram":"@zenbaba_hospital",
+      "language":"en"
     }
   ]
 }

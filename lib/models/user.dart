@@ -7,8 +7,8 @@ part 'user.g.dart';
 class User extends HiveObject {
   @HiveField(0)
   late String userName;
-  @HiveField(1)
-  late String sex;
+  @HiveField(19)
+  late int sex;
   @HiveField(2)
   late String age;
   @HiveField(3)

@@ -4,6 +4,7 @@ import 'package:derash/widgets/add_dialogue_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MedicalConditions extends StatelessWidget {
   const MedicalConditions({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class MedicalConditions extends StatelessWidget {
       final newUser = User()
         ..userName = ''
         ..age = ''
-        ..sex = ''
+        ..sex = -1
         ..bloodGroup = ''
         ..currentMedications = []
         ..medicalConditions = [name]
@@ -39,7 +40,7 @@ class MedicalConditions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Medical Conditions'),
+        title: Text(AppLocalizations.of(context)!.conditions_title),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -63,17 +64,17 @@ class MedicalConditions extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text('Medical Conditions',
-                            style: TextStyle(
+                        Text(AppLocalizations.of(context)!.conditions_title,
+                            style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                             )),
                         const SizedBox(
                           height: 6,
                         ),
-                        const Text(
-                          'Hi there, you can add or edit your profile here. this information will be handy for your doctor',
-                          style: TextStyle(fontSize: 20),
+                        Text(
+                          AppLocalizations.of(context)!.conditions_subtitle,
+                          style: const TextStyle(fontSize: 20),
                         ),
                         const SizedBox(
                           height: 10,
@@ -115,8 +116,8 @@ class MedicalConditions extends StatelessWidget {
                 builder: (ctx) {
                   return AddDialogueBox(
                       add: addMedicalCondition,
-                      title: 'Add Medical Condition',
-                      hintText1: ' Name',
+                      title: AppLocalizations.of(context)!.conditions_title,
+                      hintText1: AppLocalizations.of(context)!.name_hint,
                       hintText2: " ",
                       isContact: false);
                 });

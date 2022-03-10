@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+//import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+// import 'package:haversine/haversine.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+//import 'package:great_circle_distance2/great_circle_distance2.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -33,51 +35,86 @@ class _HospitalDetailState extends State<HospitalDetail> {
     return 12742 * asin(sqrt(a));
   }
 
-  calculateDistance() async {
-    PolylinePoints polylinePoints = PolylinePoints();
+  // calculateDistance() async {
+  //   Position? userLocation = await Geolocator.getCurrentPosition(
+  //       desiredAccuracy: LocationAccuracy.bestForNavigation);
+  //   var gcd = GreatCircleDistance.fromDegrees(
+  //       latitude1: showLocation.latitude,
+  //       longitude1: showLocation.longitude,
+  //       latitude2: userLocation.latitude,
+  //       longitude2: userLocation.longitude);
+  //   setState(() {
+  //     distance = gcd.vincentyDistance();
+  //   });
+  // }
 
-    String googleAPiKey = "AIzaSyB4gWIsaYU2vgYvc3xDxsWIVXHSqoOR0vA";
+  // calculateDistance() async {
+  //   LocationPermission permission = await Geolocator.requestPermission();
+  //   Position? userLocation = await Geolocator.getLastKnownPosition();
 
-    Map<PolylineId, Polyline> polylines = {}; //polylines to show direction
-    List<LatLng> polylineCoordinates = [];
+  //   if (userLocation != null) {
+  //     // final distanceImMeter = Geolocator.distanceBetween(
+  //     //   userLocation.latitude,
+  //     //   userLocation.longitude,
+  //     //   showLocation.latitude,
+  //     //   showLocation.latitude,
+  //     // );
+  //     // var calculatedDistance = distanceImMeter.round().toInt();
+  //     final harvesine = Haversine.fromDegrees(
+  //         latitude1: userLocation.latitude,
+  //         longitude1: userLocation.longitude,
+  //         latitude2: showLocation.latitude,
+  //         longitude2: showLocation.longitude);
 
-    LocationPermission permission = await Geolocator.requestPermission();
-    if (permission == LocationPermission.whileInUse ||
-        permission == LocationPermission.always) {
-      Position? userLocation = await Geolocator.getLastKnownPosition();
+  //     setState(() {
+  //       distance = harvesine.distance();
+  //       print("distance isssssssssssssssssssss");
+  //       print(distance);
+  //     });
+  //   }
+//     PolylinePoints polylinePoints = PolylinePoints();
 
-      if (userLocation != null) {
-        PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-          googleAPiKey,
-          PointLatLng(showLocation.latitude, showLocation.longitude),
-          PointLatLng(userLocation.latitude, userLocation.longitude),
-          travelMode: TravelMode.driving,
-        );
+//     String googleAPiKey = "AIzaSyCSNmXbVydhv8qLoeNLtvmqY9zOy1eR5J4";
+//  //polylines to show direction
+//     List<LatLng> polylineCoordinates = [];
 
-        if (result.points.isNotEmpty) {
-          result.points.forEach((PointLatLng point) {
-            polylineCoordinates.add(LatLng(point.latitude, point.longitude));
-          });
-        } else {
-          print(result.errorMessage);
-        }
+//     LocationPermission permission = await Geolocator.requestPermission();
+//     if (permission == LocationPermission.whileInUse ||
+//         permission == LocationPermission.always) {
+//       Position? userLocation = await Geolocator.getLastKnownPosition();
 
-//polulineCoordinates is the List of longitute and latidtude.
-        double totalDistance = 0;
-        for (var i = 0; i < polylineCoordinates.length - 1; i++) {
-          totalDistance += getDistance(
-              polylineCoordinates[i].latitude,
-              polylineCoordinates[i].longitude,
-              polylineCoordinates[i + 1].latitude,
-              polylineCoordinates[i + 1].longitude);
-        }
+//       if (userLocation != null) {
+//         PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+//           googleAPiKey,
+//           PointLatLng(showLocation.latitude, showLocation.longitude),
+//           PointLatLng(userLocation.latitude, userLocation.longitude),
+//           travelMode: TravelMode.driving,
+//         );
 
-        setState(() {
-          distance = totalDistance;
-        });
-      }
-    }
-  }
+//         if (result.points.isNotEmpty) {
+//           result.points.forEach((PointLatLng point) {
+//             polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+//           });
+//         } else {
+//           print(result.errorMessage);
+//         }
+
+// //polulineCoordinates is the List of longitute and latidtude.
+//         double totalDistance = 0;
+//         for (var i = 0; i < polylineCoordinates.length - 1; i++) {
+//           totalDistance += getDistance(
+//               polylineCoordinates[i].latitude,
+//               polylineCoordinates[i].longitude,
+//               polylineCoordinates[i + 1].latitude,
+//               polylineCoordinates[i + 1].longitude);
+//         }
+
+//         setState(() {
+//           distance = totalDistance;
+//         });
+//       }
+//     }
+  // }
 
   @override
   initState() {
@@ -93,7 +130,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
       ),
       icon: BitmapDescriptor.defaultMarker, //Icon for Marker
     ));
-    calculateDistance();
+   // calculateDistance();
     super.initState();
   }
 

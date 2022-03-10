@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -28,20 +29,21 @@ class Home extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
-                            'Blue Health Ethiopia',
-                            style: TextStyle(
+                            AppLocalizations.of(context)!.medica_link_name,
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 22,
                                 fontWeight: FontWeight.w400),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Text(
-                            'Our vision is to be an influential healthcare leader in creating a skilled community through easily accessible knowledge in preventive medicine.',
-                            style: TextStyle(
+                            AppLocalizations.of(context)!
+                                .medica_link_vision_subtitle,
+                            style: const TextStyle(
                               color: Colors.black,
                               fontSize: 18,
                             ),
@@ -71,9 +73,9 @@ class Home extends StatelessWidget {
                         width: 35,
                         height: 35,
                       ),
-                      title: const Text(
-                        'Emergency services',
-                        style: TextStyle(fontSize: 20),
+                      title: Text(
+                        AppLocalizations.of(context)!.emergency_services,
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                   ),
@@ -87,9 +89,9 @@ class Home extends StatelessWidget {
                         'assets/images/CCE.png',
                         width: 50,
                       ),
-                      title: const Text(
-                        'Donate to Cardiac Center Ethiopia',
-                        style: TextStyle(fontSize: 20),
+                      title: Text(
+                        AppLocalizations.of(context)!.chfe,
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                   ),
@@ -104,24 +106,26 @@ class Home extends StatelessWidget {
                         width: 30,
                         height: 30,
                       ),
-                      title: const Text(
-                        'Donate Blood',
-                        style: TextStyle(fontSize: 20),
+                      title: Text(
+                        AppLocalizations.of(context)!.donate_blood,
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                   ),
                   Card(
                     elevation: 1,
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, 'about-first-aid');
+                      },
                       leading: Image.asset(
                         'assets/images/med_kit.png',
                         width: 30,
                         height: 30,
                       ),
-                      title: const Text(
-                        'About First Aid',
-                        style: TextStyle(fontSize: 20),
+                      title: Text(
+                        AppLocalizations.of(context)!.about_first_aid,
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                   )

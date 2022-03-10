@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddDialogueBox extends StatelessWidget {
   final Function add;
@@ -35,7 +36,9 @@ class AddDialogueBox extends StatelessWidget {
               controller: nameController,
               textAlign: TextAlign.center,
               validator: (val) {
-                return val!.isEmpty ? "please insert your name first " : null;
+                return val!.isEmpty
+                    ? AppLocalizations.of(context)!.name_error_text
+                    : null;
               },
               decoration:
                   InputDecoration(hintText: hintText1, focusColor: Colors.red)),
@@ -46,8 +49,11 @@ class AddDialogueBox extends StatelessWidget {
             TextFormField(
                 controller: phoneController,
                 textAlign: TextAlign.center,
+                keyboardType: TextInputType.phone,
                 validator: (val) {
-                  return val!.isEmpty ? "please insert your name first " : null;
+                  return val!.isEmpty
+                      ? AppLocalizations.of(context)!.name_error_text
+                      : null;
                 },
                 decoration: InputDecoration(
                     hintText: hintText2, focusColor: Colors.red)),
@@ -65,7 +71,9 @@ class AddDialogueBox extends StatelessWidget {
                   Navigator.of(context).pop();
                 }
               },
-              child: const Text('ADD'))
+              child: Text(
+                AppLocalizations.of(context)!.add_item,
+              ))
         ],
       ),
     );

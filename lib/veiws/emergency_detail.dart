@@ -1,6 +1,9 @@
 import 'package:derash/models/emergency.dart';
+import 'package:derash/widgets/emergency_service_numbers.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EmergencyDetail extends StatefulWidget {
   final Emergency emergency;
@@ -75,20 +78,21 @@ class _EmergencyDetailState extends State<EmergencyDetail> {
                           )
                         : Container();
                   })),
-          TextButton(
-            style: ButtonStyle(
-                padding: MaterialStateProperty.all(
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10))),
-            onPressed: () {
-              setState(() {
-                learnMore = true;
-              });
-            },
-            child: const Text(
-              'Learn More',
-              style: TextStyle(fontSize: 20),
+          if (!learnMore)
+            TextButton(
+              style: ButtonStyle(
+                  padding: MaterialStateProperty.all(const EdgeInsets.symmetric(
+                      horizontal: 20, vertical: 10))),
+              onPressed: () {
+                setState(() {
+                  learnMore = true;
+                });
+              },
+              child: Text(
+                AppLocalizations.of(context)!.learn_more,
+                style: const TextStyle(fontSize: 20),
+              ),
             ),
-          ),
           const SizedBox(
             height: 5,
           ),
@@ -98,10 +102,37 @@ class _EmergencyDetailState extends State<EmergencyDetail> {
                     padding: MaterialStateProperty.all(
                         const EdgeInsets.symmetric(
                             horizontal: 15, vertical: 20))),
-                onPressed: () {},
-                child: const Text(
-                  'CALL AN AMBULANCE',
-                  style: TextStyle(fontSize: 20),
+                onPressed: () {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (ctx) {
+                        return SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.5,
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 25,
+                              ),
+                              Text(
+                                  AppLocalizations.of(context)!
+                                      .emergency_services,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Expanded(child: EmergencyServiceNumbers()),
+                            ],
+                          ),
+                        );
+                      });
+                },
+                child: Text(
+                  AppLocalizations.of(context)!.call_ambulance,
+                  style: const TextStyle(fontSize: 20),
                 )),
           ),
           const SizedBox(

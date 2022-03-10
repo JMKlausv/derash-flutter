@@ -4,6 +4,7 @@ import 'package:derash/widgets/add_dialogue_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Allergies extends StatelessWidget {
   const Allergies({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class Allergies extends StatelessWidget {
       final newUser = User()
         ..userName = ''
         ..age = ''
-        ..sex = ''
+        ..sex = -1
         ..bloodGroup = ''
         ..currentMedications = []
         ..medicalConditions = []
@@ -39,7 +40,7 @@ class Allergies extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Allergies'),
+        title: Text(AppLocalizations.of(context)!.allergies_title),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -63,17 +64,17 @@ class Allergies extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text('Allergies',
-                            style: TextStyle(
+                        Text(AppLocalizations.of(context)!.allergies_title,
+                            style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                             )),
                         const SizedBox(
                           height: 6,
                         ),
-                        const Text(
-                          'Hi there, you can add or edit your profile here. this information will be handy for your doctor',
-                          style: TextStyle(fontSize: 20),
+                        Text(
+                          AppLocalizations.of(context)!.allergies_subtitle,
+                          style: const TextStyle(fontSize: 20),
                         ),
                         const SizedBox(
                           height: 10,
@@ -114,8 +115,8 @@ class Allergies extends StatelessWidget {
                 builder: (ctx) {
                   return AddDialogueBox(
                       add: addAllergy,
-                      title: 'Add Allergies',
-                      hintText1: ' Name',
+                      title: AppLocalizations.of(context)!.allergies_title,
+                      hintText1: AppLocalizations.of(context)!.name_hint,
                       hintText2: " ",
                       isContact: false);
                 });

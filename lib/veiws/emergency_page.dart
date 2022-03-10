@@ -1,11 +1,15 @@
 import 'package:derash/helper_functions/boxes.dart';
+import 'package:derash/l10n/l10n.dart';
 import 'package:derash/models/emergency.dart';
+import 'package:derash/providers/locale_provider.dart';
 import 'package:derash/veiws/emergency_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class EmergencyPage extends StatefulWidget {
   const EmergencyPage({Key? key}) : super(key: key);
@@ -15,12 +19,12 @@ class EmergencyPage extends StatefulWidget {
 }
 
 class _EmergencyPageState extends State<EmergencyPage> {
-  final List gridItems = [
-    {
-      'name': 'Allergy',
-      'icon': 'assets/images/allergy.png',
-    }
-  ];
+  // final List gridItems = [
+  //   {
+  //     'name': 'Allergy',
+  //     'icon': 'assets/images/allergy.png',
+  //   }
+  // ];
 
   @override
   void dispose() {
@@ -30,23 +34,51 @@ class _EmergencyPageState extends State<EmergencyPage> {
 
   @override
   Widget build(BuildContext context) {
+    Locale locale = Provider.of<LocalProvider>(context).locale;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
             child: Text(
-              'Emergency',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              AppLocalizations.of(context)!.emergency,
+              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
             child: ValueListenableBuilder<Box<Emergency>>(
                 valueListenable: Boxes.getEmergencies().listenable(),
                 builder: (context, box, _) {
-                  final emergencies = box.values.toList().cast<Emergency>();
+                  List<Emergency> emergencies = [];
+
+                  if (locale == L10n.all[0]) {
+                    emergencies = box.values
+                        .toList()
+                        .cast<Emergency>()
+                        .where((element) => element.language == 'en')
+                        .toList();
+                  } else if (locale == L10n.all[1]) {
+                    emergencies = box.values
+                        .toList()
+                        .cast<Emergency>()
+                        .where((element) => element.language == 'am')
+                        .toList();
+                  } else if (locale == L10n.all[2]) {
+                    emergencies = box.values
+                        .toList()
+                        .cast<Emergency>()
+                        .where((element) => element.language == 'om')
+                        .toList();
+                  } else {
+                    emergencies = box.values
+                        .toList()
+                        .cast<Emergency>()
+                        .where((element) => element.language == 'en')
+                        .toList();
+                  }
+
                   return GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(

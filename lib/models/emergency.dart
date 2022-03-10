@@ -10,7 +10,13 @@ class Emergency extends HiveObject {
   final String iconUrl;
   @HiveField(2)
   final List<dynamic> description;
+  @HiveField(9)
+  final String language;
 
-  Emergency(
-      {required this.name, required this.iconUrl, required this.description});
+  Emergency({
+    required this.name,
+    required this.iconUrl,
+    required this.description,
+    required this.language,
+  });
 }

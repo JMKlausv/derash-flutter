@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EmergencyContacts extends StatelessWidget {
   const EmergencyContacts({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class EmergencyContacts extends StatelessWidget {
       final newUser = User()
         ..userName = ''
         ..age = ''
-        ..sex = ''
+        ..sex = -1
         ..bloodGroup = ''
         ..currentMedications = []
         ..medicalConditions = []
@@ -44,7 +46,7 @@ class EmergencyContacts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Emergency contacts'),
+        title: Text(AppLocalizations.of(context)!.emergency_contact_title),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -68,17 +70,20 @@ class EmergencyContacts extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text('Emergency contacts',
-                            style: TextStyle(
+                        Text(
+                            AppLocalizations.of(context)!
+                                .emergency_contact_title,
+                            style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                             )),
                         const SizedBox(
                           height: 6,
                         ),
-                        const Text(
-                          'Hi there, you can add or edit your profile here. this information will be handy for your doctor',
-                          style: TextStyle(fontSize: 20),
+                        Text(
+                          AppLocalizations.of(context)!
+                              .emergency_contact_subtitle,
+                          style: const TextStyle(fontSize: 20),
                         ),
                         const SizedBox(
                           height: 10,
@@ -92,6 +97,10 @@ class EmergencyContacts extends StatelessWidget {
                                   return Card(
                                     elevation: 3,
                                     child: ListTile(
+                                        onTap: () async {
+                                          await launch(
+                                              'tel:${emergencyContact['name']}');
+                                        },
                                         title: Text(emergencyContact['name']),
                                         subtitle:
                                             Text(emergencyContact['phone']),
@@ -122,9 +131,9 @@ class EmergencyContacts extends StatelessWidget {
                 builder: (ctx) {
                   return AddDialogueBox(
                       add: addContact,
-                      title: 'Add Emergency Contacts',
-                      hintText1: ' Name',
-                      hintText2: " Phone",
+                      title: AppLocalizations.of(context)!.add_contact,
+                      hintText1: AppLocalizations.of(context)!.name_hint,
+                      hintText2: AppLocalizations.of(context)!.phone_hint,
                       isContact: true);
                 });
           },

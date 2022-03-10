@@ -18,7 +18,7 @@ class UserAdapter extends TypeAdapter<User> {
     };
     return User()
       ..userName = fields[0] as String
-      ..sex = fields[1] as String
+      ..sex = fields[19] as int
       ..age = fields[2] as String
       ..profileImageUrl = fields[3] as String
       ..bloodGroup = fields[4] as String
@@ -34,7 +34,7 @@ class UserAdapter extends TypeAdapter<User> {
       ..writeByte(9)
       ..writeByte(0)
       ..write(obj.userName)
-      ..writeByte(1)
+      ..writeByte(19)
       ..write(obj.sex)
       ..writeByte(2)
       ..write(obj.age)

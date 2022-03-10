@@ -5,6 +5,7 @@ import 'package:derash/veiws/account/profile.dart';
 import 'package:derash/widgets/side_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -15,10 +16,16 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int currentIndex = 0;
-  final titles = ['Home', 'Emergency', 'Hospitals', 'Account'];
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> tabs = [Home(), EmergencyPage(), Hospitals(), Profile()];
+    final titles = [
+      AppLocalizations.of(context)!.home,
+      AppLocalizations.of(context)!.emergency,
+      AppLocalizations.of(context)!.hospitals,
+      AppLocalizations.of(context)!.account
+    ];
     return Scaffold(
       drawer: const SideBar(),
       appBar: AppBar(
@@ -30,33 +37,45 @@ class _BottomNavState extends State<BottomNav> {
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 40,
         type: BottomNavigationBarType.fixed,
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
         backgroundColor: Colors.white,
-        selectedLabelStyle: const TextStyle(fontSize: 17, color: Colors.red),
+        selectedLabelStyle:
+            const TextStyle(fontSize: 18, color: Colors.redAccent),
         unselectedLabelStyle: const TextStyle(fontSize: 16),
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.red,
         unselectedItemColor: Colors.black,
         currentIndex: currentIndex,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.local_hospital_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'Emergency',
-            icon: Icon(
-              Icons.warning_amber,
+            label: titles[0],
+            icon: ImageIcon(
+              AssetImage('assets/images/red_cross.png'),
+              color: Colors.black,
               size: 36,
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Hospitals',
+            label: titles[1],
             icon: Icon(
-              Icons.h_mobiledata_rounded,
+              Icons.warning_amber,
+              color: Colors.black,
+              size: 36,
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Account',
-            icon: Icon(Icons.person),
+            label: titles[2],
+            icon: Icon(
+              Icons.h_mobiledata_rounded,
+              color: Colors.black,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: titles[3],
+            icon: Icon(
+              Icons.person,
+              color: Colors.black,
+            ),
           )
         ],
         onTap: (index) {

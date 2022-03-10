@@ -2,6 +2,7 @@ import 'package:derash/widgets/donate_dialogue.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DonateToCc extends StatelessWidget {
   const DonateToCc({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class DonateToCc extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Donate To Cardiac Center'),
+        title: Text(AppLocalizations.of(context)!.chfe),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -23,9 +24,10 @@ class DonateToCc extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const Text(
-                'Donate through SMS',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              Text(
+                AppLocalizations.of(context)!.chfe_title_one,
+                style:
+                    const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
@@ -44,15 +46,15 @@ class DonateToCc extends StatelessWidget {
                     'assets/images/CCE.png',
                     width: 50,
                   ),
-                  title: const Text(
-                    'Donate 1 Birr',
-                    style: TextStyle(
+                  title: Text(
+                    AppLocalizations.of(context)!.donate_one_birr,
+                    style: const TextStyle(
                       fontSize: 23,
                     ),
                   ),
-                  subtitle: const Text(
-                    'Click to donate',
-                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.to_donate,
+                    style: const TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
               ),
@@ -70,15 +72,15 @@ class DonateToCc extends StatelessWidget {
                     'assets/images/CCE.png',
                     width: 50,
                   ),
-                  title: const Text(
-                    'Donate 10 Birr',
-                    style: TextStyle(
+                  title: Text(
+                    AppLocalizations.of(context)!.donate_ten_birr,
+                    style: const TextStyle(
                       fontSize: 23,
                     ),
                   ),
-                  subtitle: const Text(
-                    'Click to donate',
-                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.to_donate,
+                    style: const TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
               ),
@@ -96,15 +98,15 @@ class DonateToCc extends StatelessWidget {
                     'assets/images/CCE.png',
                     width: 50,
                   ),
-                  title: const Text(
-                    'Donate 50 Birr',
-                    style: TextStyle(
+                  title: Text(
+                    AppLocalizations.of(context)!.donate_fifty_birr,
+                    style: const TextStyle(
                       fontSize: 23,
                     ),
                   ),
-                  subtitle: const Text(
-                    'Click to donate',
-                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.to_donate,
+                    style: const TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
               ),
@@ -122,24 +124,25 @@ class DonateToCc extends StatelessWidget {
                     'assets/images/CCE.png',
                     width: 50,
                   ),
-                  title: const Text(
-                    'Donate 100 Birr',
-                    style: TextStyle(
+                  title: Text(
+                    AppLocalizations.of(context)!.donate_hundred_birr,
+                    style: const TextStyle(
                       fontSize: 23,
                     ),
                   ),
-                  subtitle: const Text(
-                    'Click to donate',
-                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.to_donate,
+                    style: const TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
               ),
               const SizedBox(
                 height: 15,
               ),
-              const Text(
-                'Donate through Bank',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              Text(
+                AppLocalizations.of(context)!.chfe_title_two,
+                style:
+                    const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
@@ -165,9 +168,9 @@ class DonateToCc extends StatelessWidget {
                                   top: 20, left: 15, right: 15, bottom: 0),
                               contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 10),
-                              title: const Text(
-                                'Donate through Bank',
-                                style: TextStyle(
+                              title: Text(
+                                AppLocalizations.of(context)!.chfe_title_two,
+                                style: const TextStyle(
                                     fontSize: 25, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
@@ -178,9 +181,10 @@ class DonateToCc extends StatelessWidget {
                                   child: SingleChildScrollView(
                                     child: Column(
                                       children: [
-                                        const Text(
-                                          'Here are the bank accounts you can donate to ',
-                                          style: TextStyle(
+                                        Text(
+                                          AppLocalizations.of(context)!
+                                              .chfe_bank_subtitle,
+                                          style: const TextStyle(
                                             fontSize: 21,
                                           ),
                                           textAlign: TextAlign.center,
@@ -216,14 +220,14 @@ class DonateToCc extends StatelessWidget {
                     'assets/images/CCE.png',
                     width: 50,
                   ),
-                  title: const Text(
-                    'Get Bank Information',
-                    style: TextStyle(
+                  title: Text(
+                    AppLocalizations.of(context)!.get_bank_info,
+                    style: const TextStyle(
                       fontSize: 23,
                     ),
                   ),
-                  subtitle: const Text(
-                    'Click here to get bank account information',
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.bank_info,
                     style: TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
@@ -240,16 +244,17 @@ class DonateToCc extends StatelessWidget {
                                   top: 20, left: 15, right: 15, bottom: 0),
                               contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 10),
-                              title: const Text(
-                                'Donate through Bank',
-                                style: TextStyle(
+                              title: Text(
+                                AppLocalizations.of(context)!.chfe_title_two,
+                                style: const TextStyle(
                                     fontSize: 25, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                               children: [
-                                const Text(
-                                  'Here are the bank accounts you can donate to ',
-                                  style: TextStyle(
+                                Text(
+                                  AppLocalizations.of(context)!
+                                      .chfe_bank_subtitle,
+                                  style: const TextStyle(
                                     fontSize: 21,
                                   ),
                                   textAlign: TextAlign.center,
@@ -261,28 +266,32 @@ class DonateToCc extends StatelessWidget {
                                   elevation: 1,
                                   child: ListTile(
                                     onTap: () {},
-                                    title: Column(children: const [
-                                      SizedBox(
+                                    title: Column(children: [
+                                      const SizedBox(
                                         height: 10,
                                       ),
-                                      Text(
+                                      const Text(
                                         '02311236167000',
                                         style: TextStyle(
                                           fontSize: 20,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 20,
                                       ),
                                       Text(
-                                        'Churchill Branch',
-                                        style: TextStyle(color: Colors.black),
+                                        AppLocalizations.of(context)!
+                                            .foreign_bank_branch,
+                                        style: const TextStyle(
+                                            color: Colors.black),
                                       ),
                                       Text(
-                                        'Swift code = AWINETAA',
-                                        style: TextStyle(color: Colors.black),
+                                        AppLocalizations.of(context)!
+                                            .foreign_bank_swift,
+                                        style: const TextStyle(
+                                            color: Colors.black),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 20,
                                       ),
                                     ]),
@@ -299,15 +308,15 @@ class DonateToCc extends StatelessWidget {
                     'assets/images/CCE.png',
                     width: 50,
                   ),
-                  title: const Text(
-                    'Get Forein Currency Account',
-                    style: TextStyle(
+                  title: Text(
+                    AppLocalizations.of(context)!.foreign_bank_info,
+                    style: const TextStyle(
                       fontSize: 23,
                     ),
                   ),
-                  subtitle: const Text(
-                    'Click here to get bank account information',
-                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.bank_info,
+                    style: const TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
               ),
@@ -329,10 +338,10 @@ class BankAccountInfo extends StatelessWidget {
       child: ListTile(
         onTap: () {
           Clipboard.setData(ClipboardData(text: accountNumber)).then((value) {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text(
-              'Copied to clipboard',
-              style: TextStyle(
+              AppLocalizations.of(context)!.chfe_copied,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 20,
               ),
@@ -346,8 +355,8 @@ class BankAccountInfo extends StatelessWidget {
             fontSize: 20,
           ),
         ),
-        subtitle: const Text(
-          'Click to copy account number',
+        subtitle: Text(
+          AppLocalizations.of(context)!.to_copy,
           style: TextStyle(color: Colors.black),
         ),
         leading: Image.asset(

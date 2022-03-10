@@ -4,6 +4,7 @@ import 'package:derash/widgets/add_dialogue_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CurrentMedication extends StatelessWidget {
   const CurrentMedication({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class CurrentMedication extends StatelessWidget {
       final newUser = User()
         ..userName = ''
         ..age = ''
-        ..sex = ''
+        ..sex = -1
         ..bloodGroup = ''
         ..currentMedications = [name]
         ..medicalConditions = []
@@ -39,7 +40,7 @@ class CurrentMedication extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Current Medication'),
+        title: Text(AppLocalizations.of(context)!.medication_title),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -63,17 +64,17 @@ class CurrentMedication extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text('Current Medications',
-                            style: TextStyle(
+                        Text(AppLocalizations.of(context)!.medication_title,
+                            style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                             )),
                         const SizedBox(
                           height: 6,
                         ),
-                        const Text(
-                          'Hi there, you can add or edit your profile here. this information will be handy for your doctor',
-                          style: TextStyle(fontSize: 20),
+                        Text(
+                          AppLocalizations.of(context)!.medication_subtitle,
+                          style: const TextStyle(fontSize: 20),
                         ),
                         const SizedBox(
                           height: 10,
@@ -116,8 +117,8 @@ class CurrentMedication extends StatelessWidget {
                 builder: (ctx) {
                   return AddDialogueBox(
                       add: addCurrentMedication,
-                      title: 'Current Medication',
-                      hintText1: ' Name',
+                      title: AppLocalizations.of(context)!.medication_title,
+                      hintText1: AppLocalizations.of(context)!.name_hint,
                       hintText2: " ",
                       isContact: false);
                 });

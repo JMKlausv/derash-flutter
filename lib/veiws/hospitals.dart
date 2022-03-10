@@ -4,6 +4,7 @@ import 'package:derash/veiws/hospital_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Hospitals extends StatelessWidget {
   const Hospitals({Key? key}) : super(key: key);
@@ -15,10 +16,10 @@ class Hospitals extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
             child: Text(
-              'Hospitals nearby',
+              AppLocalizations.of(context)!.hospital_near_by,
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),

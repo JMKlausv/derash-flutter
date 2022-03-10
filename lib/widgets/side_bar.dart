@@ -1,15 +1,19 @@
 import 'dart:io';
 import 'package:derash/helper_functions/boxes.dart';
 import 'package:derash/models/user.dart';
+import 'package:derash/providers/locale_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final localeData = Provider.of<LocalProvider>(context);
     return Container(
       width: MediaQuery.of(context).size.width * 0.75,
       color: Colors.red,
@@ -42,9 +46,9 @@ class SideBar extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8),
                           child: user.isEmpty
-                              ? const Text(
-                                  'Your Name',
-                                  style: TextStyle(
+                              ? Text(
+                                  AppLocalizations.of(context)!.name_hint,
+                                  style: const TextStyle(
                                       fontSize: 20, color: Colors.white),
                                 )
                               : Text(
@@ -77,9 +81,9 @@ class SideBar extends StatelessWidget {
                                   top: 20, left: 15, right: 15, bottom: 0),
                               contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 50, vertical: 10),
-                              title: const Text(
-                                'Choose a Language',
-                                style: TextStyle(
+                              title: Text(
+                                AppLocalizations.of(context)!.select_a_language,
+                                style: const TextStyle(
                                     fontSize: 23, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
@@ -99,7 +103,10 @@ class SideBar extends StatelessWidget {
                                         padding: MaterialStateProperty.all(
                                             const EdgeInsets.symmetric(
                                                 horizontal: 45, vertical: 15))),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      localeData.setLocale(const Locale('am'));
+                                      Navigator.of(context).pop();
+                                    },
                                     child: const Text(
                                       'አማርኛ',
                                       style: TextStyle(
@@ -120,7 +127,10 @@ class SideBar extends StatelessWidget {
                                         padding: MaterialStateProperty.all(
                                             const EdgeInsets.symmetric(
                                                 horizontal: 45, vertical: 15))),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      localeData.setLocale(const Locale('en'));
+                                      Navigator.of(context).pop();
+                                    },
                                     child: const Text(
                                       'English',
                                       style: TextStyle(
@@ -141,7 +151,10 @@ class SideBar extends StatelessWidget {
                                         padding: MaterialStateProperty.all(
                                             const EdgeInsets.symmetric(
                                                 horizontal: 45, vertical: 15))),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      localeData.setLocale(const Locale('om'));
+                                      Navigator.of(context).pop();
+                                    },
                                     child: const Text(
                                       'Oromiffaa',
                                       style: TextStyle(
@@ -154,22 +167,22 @@ class SideBar extends StatelessWidget {
                             );
                           });
                     },
-                    child: const Text('Change Language',
-                        style: TextStyle(
+                    child: Text(AppLocalizations.of(context)!.languages,
+                        style: const TextStyle(
                           fontSize: 18,
                         ))),
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).pushNamed('about-us');
                     },
-                    child: const Text('About Us',
-                        style: TextStyle(
+                    child: Text(AppLocalizations.of(context)!.about_us,
+                        style: const TextStyle(
                           fontSize: 18,
                         ))),
                 TextButton(
                     onPressed: () {},
-                    child: const Text('Derash App v-1.0',
-                        style: TextStyle(
+                    child: Text(AppLocalizations.of(context)!.app_version,
+                        style: const TextStyle(
                           fontSize: 18,
                         )))
               ],

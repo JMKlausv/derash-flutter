@@ -3,6 +3,8 @@ import 'package:derash/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -14,16 +16,13 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile> {
   final formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
+
   TextEditingController ageController = TextEditingController();
-  String selectedGender = 'Female';
+
   String selectedBloodGroup = 'A+';
 
   var bloodGroup = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
 
-  var gender = [
-    'Female',
-    'Male',
-  ];
   final box = Boxes.getUser();
 
   saveUserData() async {
@@ -32,14 +31,14 @@ class _EditProfileState extends State<EditProfile> {
         final user = box.values.first;
         user.userName = nameController.text;
         user.age = ageController.text;
-        user.sex = selectedGender;
+        user.sex = _selectedGender;
         user.bloodGroup = selectedBloodGroup;
         await user.save();
       } else {
         final newUser = User()
           ..userName = nameController.text
           ..age = ageController.text
-          ..sex = selectedGender
+          ..sex = _selectedGender
           ..bloodGroup = selectedBloodGroup
           ..currentMedications = []
           ..medicalConditions = []
@@ -52,8 +51,31 @@ class _EditProfileState extends State<EditProfile> {
     }
   }
 
+  String selectedGender = '';
+  int _selectedGender = 0;
+  @override
+  void initState() {
+    if (box.values.isNotEmpty) {
+      final user = box.values.first;
+      nameController.text = user.userName;
+      ageController.text = user.age;
+      selectedBloodGroup = user.bloodGroup;
+      _selectedGender = user.sex;
+    }
+
+    return super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var gender = [
+      AppLocalizations.of(context)!.sex_female,
+      AppLocalizations.of(context)!.sex_male,
+    ];
+    if (selectedGender == '') {
+      selectedGender = gender[_selectedGender];
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -66,16 +88,17 @@ class _EditProfileState extends State<EditProfile> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Your Profile',
-                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+              Text(
+                AppLocalizations.of(context)!.profile_title,
+                style:
+                    const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                'Hi there, you can add or edit your profile here. this information will be handy for your doctor.',
-                style: TextStyle(fontSize: 20),
+              Text(
+                AppLocalizations.of(context)!.profile_subtitle,
+                style: const TextStyle(fontSize: 20),
               ),
               const SizedBox(
                 height: 15,
@@ -91,36 +114,39 @@ class _EditProfileState extends State<EditProfile> {
                         textAlign: TextAlign.start,
                         validator: (val) {
                           return val!.isEmpty
-                              ? "please insert your name first "
+                              ? AppLocalizations.of(context)!.name_error_text
                               : null;
                         },
-                        decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.symmetric(
                             horizontal: 15,
                             vertical: 20,
                           ),
-                          label: Text('Name'),
-                          labelStyle: TextStyle(color: Colors.red),
+                          label: Text(
+                            AppLocalizations.of(context)!.name_hint,
+                          ),
+                          labelStyle: const TextStyle(color: Colors.red),
                           focusColor: Colors.red,
                         ),
                       ),
                       TextFormField(
                         controller: ageController,
+                        keyboardType: TextInputType.number,
                         // initialValue:
                         //     box.isNotEmpty ? box.values.first.age : '',
                         textAlign: TextAlign.start,
                         validator: (val) {
                           return val!.isEmpty
-                              ? "please insert your age first "
+                              ? AppLocalizations.of(context)!.age_error_text
                               : null;
                         },
-                        decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.symmetric(
                             horizontal: 15,
                             vertical: 20,
                           ),
-                          label: Text('Age'),
-                          labelStyle: TextStyle(color: Colors.red),
+                          label: Text(AppLocalizations.of(context)!.age_hint),
+                          labelStyle: const TextStyle(color: Colors.red),
                           focusColor: Colors.red,
                         ),
                       ),
@@ -142,6 +168,7 @@ class _EditProfileState extends State<EditProfile> {
                           onChanged: (String? newValue) {
                             setState(() {
                               selectedGender = newValue!;
+                              _selectedGender = gender.indexOf(newValue);
                             });
                           },
                         ),
@@ -175,10 +202,10 @@ class _EditProfileState extends State<EditProfile> {
                         onPressed: () async {
                           await saveUserData();
                         },
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 30, vertical: 17),
-                          child: Text('SAVE'),
+                          child: Text(AppLocalizations.of(context)!.save),
                         ),
                       ),
                     ],
