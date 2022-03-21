@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class EmergencyServiceNumbers extends StatelessWidget {
   const EmergencyServiceNumbers({
     Key? key,
@@ -26,14 +27,12 @@ class EmergencyServiceNumbers extends StatelessWidget {
                       title: Text(
                         AppLocalizations.of(context)!.meccare_title,
                         style: const TextStyle(
-                            fontSize: 23,
-                            fontWeight: FontWeight.bold),
+                            fontSize: 23, fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
                       children: [
                         Text(
-                          AppLocalizations.of(context)!
-                              .meccare_subtitle,
+                          AppLocalizations.of(context)!.meccare_subtitle,
                           style: const TextStyle(
                             fontSize: 20,
                           ),
@@ -44,11 +43,9 @@ class EmergencyServiceNumbers extends StatelessWidget {
                             onTap: () {
                               launch('tel:7605');
                             },
-                            leading:
-                                const Icon(Icons.dashboard_outlined),
+                            leading: const Icon(Icons.dashboard_outlined),
                             title: Text(
-                              AppLocalizations.of(context)!
-                                  .meccare_harar,
+                              AppLocalizations.of(context)!.meccare_harar,
                               style: const TextStyle(
                                 fontSize: 23,
                               ),
@@ -70,11 +67,9 @@ class EmergencyServiceNumbers extends StatelessWidget {
                             onTap: () {
                               launch('tel:7844');
                             },
-                            leading:
-                                const Icon(Icons.dashboard_outlined),
+                            leading: const Icon(Icons.dashboard_outlined),
                             title: Text(
-                              AppLocalizations.of(context)!
-                                  .meccare_bahirdar,
+                              AppLocalizations.of(context)!.meccare_bahirdar,
                               style: const TextStyle(
                                 fontSize: 23,
                               ),
@@ -96,11 +91,9 @@ class EmergencyServiceNumbers extends StatelessWidget {
                             onTap: () {
                               launch('tel:7337');
                             },
-                            leading:
-                                const Icon(Icons.dashboard_outlined),
+                            leading: const Icon(Icons.dashboard_outlined),
                             title: Text(
-                              AppLocalizations.of(context)!
-                                  .meccare_hawassa,
+                              AppLocalizations.of(context)!.meccare_hawassa,
                               style: const TextStyle(
                                 fontSize: 23,
                               ),
@@ -122,11 +115,9 @@ class EmergencyServiceNumbers extends StatelessWidget {
                             onTap: () {
                               launch('tel:6238');
                             },
-                            leading:
-                                const Icon(Icons.dashboard_outlined),
+                            leading: const Icon(Icons.dashboard_outlined),
                             title: Text(
-                              AppLocalizations.of(context)!
-                                  .meccare_jimma,
+                              AppLocalizations.of(context)!.meccare_jimma,
                               style: const TextStyle(
                                 fontSize: 23,
                               ),
@@ -148,8 +139,8 @@ class EmergencyServiceNumbers extends StatelessWidget {
                   });
             },
             leading: Image.asset(
-              'assets/images/red_cross.png',
-              width: 40,
+              'assets/images/meicip.png',
+              width: 55,
             ),
             title: Text(
               AppLocalizations.of(context)!.meccare,
@@ -159,8 +150,7 @@ class EmergencyServiceNumbers extends StatelessWidget {
             ),
             subtitle: Text(
               AppLocalizations.of(context)!.to_dial,
-              style:
-                  const TextStyle(fontSize: 15, color: Colors.black),
+              style: const TextStyle(fontSize: 15, color: Colors.black),
             ),
             trailing: const Icon(
               Icons.phone,
@@ -187,8 +177,7 @@ class EmergencyServiceNumbers extends StatelessWidget {
             ),
             subtitle: Text(
               AppLocalizations.of(context)!.to_dial,
-              style:
-                  const TextStyle(fontSize: 15, color: Colors.black),
+              style: const TextStyle(fontSize: 15, color: Colors.black),
             ),
             trailing: const Icon(
               Icons.phone,
@@ -215,8 +204,7 @@ class EmergencyServiceNumbers extends StatelessWidget {
             ),
             subtitle: Text(
               AppLocalizations.of(context)!.to_dial,
-              style:
-                  const TextStyle(fontSize: 15, color: Colors.black),
+              style: const TextStyle(fontSize: 15, color: Colors.black),
             ),
             trailing: const Icon(
               Icons.phone,

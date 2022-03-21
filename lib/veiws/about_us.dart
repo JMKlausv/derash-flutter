@@ -157,7 +157,7 @@ class AboutUs extends StatelessWidget {
                 leading: ImageIcon(
                   const AssetImage('assets/images/linkedin.png'),
                   color: Colors.blue.shade900,
-                ),
+                ), 
                 title: Text(
                   AppLocalizations.of(context)!.instagram_title,
                   style: const TextStyle(

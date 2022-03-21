@@ -190,25 +190,41 @@ class DonateToCc extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                         ),
                                         BankAccountInfo(
-                                            accountNumber:
-                                                bankAccounts['cbe'].toString()),
+                                          accountNumber:
+                                              bankAccounts['cbe'].toString(),
+                                          iconUrl: 'assets/images/cbe_icon.png',
+                                        ),
                                         BankAccountInfo(
-                                            accountNumber:
-                                                bankAccounts['dashen']
-                                                    .toString()),
+                                          accountNumber:
+                                              bankAccounts['dashen'].toString(),
+                                          iconUrl:
+                                              'assets/images/dashen_icon.png',
+                                        ),
                                         BankAccountInfo(
-                                            accountNumber: bankAccounts['awash']
-                                                .toString()),
+                                          accountNumber:
+                                              bankAccounts['awash'].toString(),
+                                          iconUrl:
+                                              'assets/images/awash_icon.png',
+                                        ),
                                         BankAccountInfo(
-                                            accountNumber: bankAccounts['abay']
-                                                .toString()),
+                                          accountNumber:
+                                              bankAccounts['abay'].toString(),
+                                          iconUrl:
+                                              'assets/images/abay_icon.png',
+                                        ),
                                         BankAccountInfo(
-                                            accountNumber: bankAccounts['coop']
-                                                .toString()),
+                                          accountNumber:
+                                              bankAccounts['coop'].toString(),
+                                          iconUrl:
+                                              'assets/images/coop_icon.png',
+                                        ),
                                         BankAccountInfo(
-                                            accountNumber:
-                                                bankAccounts['abysinya']
-                                                    .toString())
+                                          accountNumber:
+                                              bankAccounts['abysinya']
+                                                  .toString(),
+                                          iconUrl:
+                                              'assets/images/abyssinya_icon.png',
+                                        )
                                       ],
                                     ),
                                   ),
@@ -296,8 +312,8 @@ class DonateToCc extends StatelessWidget {
                                       ),
                                     ]),
                                     leading: Image.asset(
-                                      'assets/images/linkedin.png',
-                                      width: 35,
+                                      'assets/images/awash_icon.png',
+                                      width: 55,
                                     ),
                                   ),
                                 )
@@ -328,7 +344,9 @@ class DonateToCc extends StatelessWidget {
 
 class BankAccountInfo extends StatelessWidget {
   final String accountNumber;
-  const BankAccountInfo({Key? key, required this.accountNumber})
+  final String iconUrl;
+  const BankAccountInfo(
+      {Key? key, required this.accountNumber, required this.iconUrl})
       : super(key: key);
 
   @override
@@ -357,11 +375,11 @@ class BankAccountInfo extends StatelessWidget {
         ),
         subtitle: Text(
           AppLocalizations.of(context)!.to_copy,
-          style: TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black),
         ),
         leading: Image.asset(
-          'assets/images/linkedin.png',
-          width: 35,
+          iconUrl,
+          width: 55,
         ),
       ),
     );

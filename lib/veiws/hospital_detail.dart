@@ -118,7 +118,14 @@ class _HospitalDetailState extends State<HospitalDetail> {
 
   @override
   initState() {
-    showLocation = LatLng(widget.hospital.location['latitude'],
+  
+   // calculateDistance();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+      showLocation = LatLng(widget.hospital.location['latitude'],
         widget.hospital.location['longitude']);
     markers.add(Marker(
       //add marker on google map
@@ -130,12 +137,6 @@ class _HospitalDetailState extends State<HospitalDetail> {
       ),
       icon: BitmapDescriptor.defaultMarker, //Icon for Marker
     ));
-   // calculateDistance();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('zenbaba general hospital'),

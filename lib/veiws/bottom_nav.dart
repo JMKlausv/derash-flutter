@@ -49,7 +49,7 @@ class _BottomNavState extends State<BottomNav> {
         items: [
           BottomNavigationBarItem(
             label: titles[0],
-            icon: ImageIcon(
+            icon: const ImageIcon(
               AssetImage('assets/images/red_cross.png'),
               color: Colors.black,
               size: 36,
@@ -57,26 +57,28 @@ class _BottomNavState extends State<BottomNav> {
           ),
           BottomNavigationBarItem(
             label: titles[1],
-            icon: Icon(
-              Icons.warning_amber,
-              color: Colors.black,
+            icon: const ImageIcon(
+              AssetImage('assets/images/emergency_icon.png'),
+              color: Colors.black87,
               size: 36,
             ),
           ),
           BottomNavigationBarItem(
             label: titles[2],
-            icon: Icon(
-              Icons.h_mobiledata_rounded,
-              color: Colors.black,
+            icon: const ImageIcon(
+              AssetImage('assets/images/hospitals_icon.png'),
+              color: Colors.black87,
+              size: 36,
             ),
           ),
           BottomNavigationBarItem(
             label: titles[3],
-            icon: Icon(
-              Icons.person,
+            icon: const ImageIcon(
+              AssetImage('assets/images/account.png'),
               color: Colors.black,
+              size: 36,
             ),
-          )
+          ),
         ],
         onTap: (index) {
           setState(() {

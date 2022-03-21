@@ -104,6 +104,8 @@ class _EmergencyPageState extends State<EmergencyPage> {
                                     const EdgeInsets.only(bottom: 7, top: 10),
                                 child: Text(
                                   emergencies[index].name,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(fontSize: 20),
                                   textAlign: TextAlign.center,
                                 ),
@@ -113,6 +115,7 @@ class _EmergencyPageState extends State<EmergencyPage> {
                                 child: Image.asset(
                                   emergencies[index].iconUrl,
                                   fit: BoxFit.scaleDown,
+                                  color: Colors.red,
 
                                   width: 20,
 

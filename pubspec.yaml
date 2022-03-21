@@ -77,6 +77,17 @@ flutter:
     - assets/images/telegram.png
     - assets/data/emergency.json
     - assets/data/hospital.json
+    - assets/images/meicip.png
+    - assets/images/dashen_icon.png
+    - assets/images/coop_icon.png
+    - assets/images/chfe_icon.png
+    - assets/images/cbe_icon.png
+    - assets/images/awash_icon.png
+    - assets/images/abyssinya_icon.png
+    - assets/images/abay_icon.png
+    - assets/images/emergency_icon.png
+    - assets/images/hospitals_icon.png
+
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
