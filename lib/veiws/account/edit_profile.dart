@@ -68,12 +68,19 @@ class _EditProfileState extends State<EditProfile> {
 
   @override
   Widget build(BuildContext context) {
-    var gender = [
+    final gender = [
       AppLocalizations.of(context)!.sex_female,
       AppLocalizations.of(context)!.sex_male,
     ];
-    if (selectedGender == '') {
+
+    if (_selectedGender > 0) {
       selectedGender = gender[_selectedGender];
+    }
+    if (selectedGender == '') {
+      selectedGender = gender[0];
+    }
+    if (selectedBloodGroup == '') {
+      selectedBloodGroup = bloodGroup[0];
     }
 
     return Scaffold(

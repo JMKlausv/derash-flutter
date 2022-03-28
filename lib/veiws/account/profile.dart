@@ -20,7 +20,7 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   final box = Boxes.getUser();
   late XFile imageFile;
-  late String userGender;
+  late String userGender = '';
 
   handleTakePhoto() async {
     Navigator.pop(context);
@@ -120,7 +120,7 @@ class _ProfileState extends State<Profile> {
           if (user.isNotEmpty && user.first.profileImageUrl != '') {
             imageFile = XFile(user.first.profileImageUrl);
           }
-          if (user.isNotEmpty) {
+          if (user.isNotEmpty && user.first.sex != -1) {
             userGender = gender[user.first.sex];
           }
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:dio/dio.dart';
 //import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 // import 'package:haversine/haversine.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -24,7 +25,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
   final box = Boxes.getHospitals();
 
   late LatLng showLocation;
-  late double distance = 0.0;
+  late double distance = 111111;
 
   Set<Marker> markers = {};
   double getDistance(lat1, lon1, lat2, lon2) {
@@ -35,6 +36,50 @@ class _HospitalDetailState extends State<HospitalDetail> {
     return 12742 * asin(sqrt(a));
   }
 
+  double calculateDistance(lat1, lon1, lat2, lon2) {
+    var radlat1 = pi * lat1 / 180;
+    var radlat2 = pi * lat2 / 180;
+    var theta = lon1 - lon2;
+    var radtheta = pi * theta / 180;
+    var dist = sin(radlat1) * sin(radlat2) +
+        cos(radlat1) * cos(radlat2) * cos(radtheta);
+    dist = acos(dist);
+    dist = dist * 180 / pi;
+    dist = dist * 60 * 1.1515;
+    dist = dist * 1.609344;
+    return dist;
+  }
+
+  calc() async {
+    // //LocationPermission permission = await Geolocator.requestPermission();
+    // LocationPermission permission = await Geolocator.checkPermission();
+    // if (permission == LocationPermission.denied ||
+    //     permission == LocationPermission.unableToDetermine) {
+    //   permission = await Geolocator.requestPermission();
+    // }
+    // if (permission == LocationPermission.always ||
+    //     permission == LocationPermission.whileInUse) {
+    Position? userLocation = await Geolocator.getLastKnownPosition();
+    //   double dist = calculateDistance(
+    //       showLocation.latitude,
+    //       showLocation.longitude,
+    //       userLocation!.latitude,
+    //       userLocation.longitude);
+    Dio dio = Dio();
+    Response response = await dio.get(
+        "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins= ${showLocation.latitude},${showLocation.longitude}&destinations=${userLocation!.latitude},${userLocation.longitude}&key=AIzaSyB4gWIsaYU2vgYvc3xDxsWIVXHSqoOR0vA");
+    print(
+        'anaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+    print(response.data);
+    // double dist = response.data as double ;
+    // setState(() {
+    //   distance = dist;
+    //   print('what is ur probleeemmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm');
+    //   print(distance);
+    //   print('yyyyyyyyyyyyyyy');
+    //   print(dist);
+    // });
+  }
   // calculateDistance() async {
   //   Position? userLocation = await Geolocator.getCurrentPosition(
   //       desiredAccuracy: LocationAccuracy.bestForNavigation);
@@ -118,14 +163,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
 
   @override
   initState() {
-  
-   // calculateDistance();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-      showLocation = LatLng(widget.hospital.location['latitude'],
+    showLocation = LatLng(widget.hospital.location['latitude'],
         widget.hospital.location['longitude']);
     markers.add(Marker(
       //add marker on google map
@@ -137,6 +175,13 @@ class _HospitalDetailState extends State<HospitalDetail> {
       ),
       icon: BitmapDescriptor.defaultMarker, //Icon for Marker
     ));
+    calc();
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('zenbaba general hospital'),
@@ -211,7 +256,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
                           width: 30,
                         ),
                         title: Text(
-                          '${distance} km away',
+                          '$distance km away',
                           style: const TextStyle(fontSize: 22),
                         ),
                         subtitle: const Text(
