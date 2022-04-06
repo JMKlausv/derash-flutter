@@ -1,4 +1,5 @@
 import 'package:derash/helper_functions/boxes.dart';
+import 'package:derash/helper_functions/maps.dart';
 import 'package:derash/models/hospital.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -26,6 +27,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
 
   late LatLng showLocation;
   late double distance = 111111;
+  late String dist = '';
 
   Set<Marker> markers = {};
   double getDistance(lat1, lon1, lat2, lon2) {
@@ -51,26 +53,40 @@ class _HospitalDetailState extends State<HospitalDetail> {
   }
 
   calc() async {
-    // //LocationPermission permission = await Geolocator.requestPermission();
-    // LocationPermission permission = await Geolocator.checkPermission();
-    // if (permission == LocationPermission.denied ||
-    //     permission == LocationPermission.unableToDetermine) {
-    //   permission = await Geolocator.requestPermission();
-    // }
-    // if (permission == LocationPermission.always ||
-    //     permission == LocationPermission.whileInUse) {
-    Position? userLocation = await Geolocator.getLastKnownPosition();
-    //   double dist = calculateDistance(
-    //       showLocation.latitude,
-    //       showLocation.longitude,
-    //       userLocation!.latitude,
-    //       userLocation.longitude);
-    Dio dio = Dio();
-    Response response = await dio.get(
-        "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins= ${showLocation.latitude},${showLocation.longitude}&destinations=${userLocation!.latitude},${userLocation.longitude}&key=AIzaSyB4gWIsaYU2vgYvc3xDxsWIVXHSqoOR0vA");
-    print(
-        'anaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-    print(response.data);
+    //LocationPermission permission = await Geolocator.requestPermission();
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied ||
+        permission == LocationPermission.unableToDetermine) {
+      permission = await Geolocator.requestPermission();
+    }
+    if (permission == LocationPermission.always ||
+        permission == LocationPermission.whileInUse) {
+      Position? userLocation = await Geolocator.getCurrentPosition();
+      String dista = Map().distance(
+          userLocation.latitude,
+          userLocation.longitude,
+          showLocation.latitude,
+          showLocation.longitude);
+      print('this is distance from android formulaaaaaaaaaaaaaaaaaa');
+      print(dista);
+      setState(() {
+        dist = dista;
+      });
+
+      // print(userLocation);
+      //   // double dist = calculateDistance(
+      //   //     showLocation.latitude,
+      //   //     showLocation.longitude,
+      //   //     userLocation!.latitude,
+      //   //     userLocation.longitude);
+      // String googleAPiKey = "AIzaSyB-9bQTibo6-GFFEUdyao16sGyZudCakoE";
+      // Dio dio = Dio();
+      // Response response = await dio.get(
+      //     "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins= ${showLocation.latitude},${showLocation.longitude}&destinations=${userLocation.latitude},${userLocation.longitude}&key=$googleAPiKey");
+      // print(
+      //     'anaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+      // print(response.data);
+    }
     // double dist = response.data as double ;
     // setState(() {
     //   distance = dist;
@@ -256,7 +272,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
                           width: 30,
                         ),
                         title: Text(
-                          '$distance km away',
+                          '$dist km away',
                           style: const TextStyle(fontSize: 22),
                         ),
                         subtitle: const Text(
