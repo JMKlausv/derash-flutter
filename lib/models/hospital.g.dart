@@ -17,21 +17,20 @@ class HospitalAdapter extends TypeAdapter<Hospital> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Hospital(
-      name: fields[0] as String,
+      name_en: fields[6] as String,
+      name_am: fields[7] as String,
       location: (fields[1] as Map).cast<String, dynamic>(),
       phone: fields[2] as String,
       facebook: fields[3] as String,
       telegram: fields[4] as String,
       language: fields[5] as String,
-    );
+    )..distance = fields[8] as double;
   }
 
   @override
   void write(BinaryWriter writer, Hospital obj) {
     writer
-      ..writeByte(6)
-      ..writeByte(0)
-      ..write(obj.name)
+      ..writeByte(8)
       ..writeByte(1)
       ..write(obj.location)
       ..writeByte(2)
@@ -41,7 +40,13 @@ class HospitalAdapter extends TypeAdapter<Hospital> {
       ..writeByte(4)
       ..write(obj.telegram)
       ..writeByte(5)
-      ..write(obj.language);
+      ..write(obj.language)
+      ..writeByte(6)
+      ..write(obj.name_en)
+      ..writeByte(7)
+      ..write(obj.name_am)
+      ..writeByte(8)
+      ..write(obj.distance);
   }
 
   @override

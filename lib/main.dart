@@ -62,7 +62,8 @@ void main() async {
   final box2 = Boxes.getHospitals();
   for (var hospital in hospitals) {
     final singleHospital = Hospital(
-        name: hospital['name'],
+        name_en: hospital['name_en'],
+        name_am: hospital['name_am'],
         location: hospital['location'],
         phone: hospital['phone'],
         facebook: hospital['facebook'],

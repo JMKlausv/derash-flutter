@@ -5,8 +5,6 @@ part 'hospital.g.dart';
 
 @HiveType(typeId: 2)
 class Hospital extends HiveObject {
-  @HiveField(0)
-  final String name;
   @HiveField(1)
   final Map<String, dynamic> location;
   @HiveField(2)
@@ -17,9 +15,16 @@ class Hospital extends HiveObject {
   final String telegram;
   @HiveField(5)
   final String language;
+  @HiveField(6)
+  final String name_en;
+  @HiveField(7)
+  final String name_am;
+  @HiveField(8)
+   double distance = -1;
 
   Hospital(
-      {required this.name,
+      {required this.name_en,
+      required this.name_am,
       required this.location,
       required this.phone,
       required this.facebook,
