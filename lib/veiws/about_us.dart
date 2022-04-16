@@ -159,7 +159,7 @@ class AboutUs extends StatelessWidget {
                   color: Colors.blue.shade900,
                 ), 
                 title: Text(
-                  AppLocalizations.of(context)!.instagram_title,
+                  AppLocalizations.of(context)!.linkedin_title,
                   style: const TextStyle(
                     fontSize: 23,
                   ),

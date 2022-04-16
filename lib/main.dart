@@ -84,10 +84,12 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           final locale = Provider.of<LocalProvider>(context).locale;
           return MaterialApp(
-              title: 'Derash',
+              title: 'ደራሽ',
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
+                primaryColor: Colors.white,
                 primarySwatch: Colors.red,
+               
                 scaffoldBackgroundColor: Colors.white,
                 // fontFamily: "OverpassRegular",
                 visualDensity: VisualDensity.adaptivePlatformDensity,

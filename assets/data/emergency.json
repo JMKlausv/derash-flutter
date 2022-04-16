@@ -60,7 +60,7 @@
     },
     {
       "title":"Antihistamine",
-      "imageUrl":"",
+      "imageUrl":"assets/images/anaphylaxis_ig.png",
       "vedioUrl":"",
       "content":" In addition to epinephrine, antihistamines may be prescribed by an allergist. This can be done in different ways. Therefore, if the patient has a prescription antihistamine, give it according to the dosage.",
       "isMain":false
@@ -124,7 +124,7 @@
     },
     {
       "title":"አንቲሂስታሚን",
-      "imageUrl":"",
+      "imageUrl":"assets/images/anaphylaxis_ig.png",
       "vedioUrl":"",
       "content":"  ከኢፒነፍሪን ሌላም በአለርጂ የተጠቃ ሰው አንቲሂስታሚን ከህክምና ባለሞያ ሊጠቀም ይችላል፤ ይህም በተለያየ መልኩሊዘጋጅ ይችላል፡፡ ስለሆነም ታማሚው በሐኪም የታዘዘ አንቲሂስታሚን ካለው ላዩ ላይ ባለው አወሳሰድ መሰረት ይስጡት፡፡",
       "isMain":false
@@ -189,7 +189,7 @@
     },
     {
       "title":"Hiistaamiinii",
-      "imageUrl":"",
+      "imageUrl":"assets/images/anaphylaxis_ig.png",
       "vedioUrl":"",
       "content":" iippinafiriiniin alatti nma alarjiin qabameef hiistaamiiniin ogeessa fayyaatiin kennamu faayidaa qabaachuu mala. Kunis bifoota garagaraatiin kan qophaaye ta‟uu mala. Waan kana ta‟eef dhukkubsataan hiistaamiinii qabu akka hakimni ajajeefitti ykn immoo gubbaa qorichaarratii akka barreeffametti kennaafii",
       "isMain":false
@@ -704,7 +704,7 @@
     },
     {
       "title":"ABDOMINAL THRUST",
-      "imageUrl":"",
+      "imageUrl":"assets/images/h_maneuver.png",
       "vedioUrl":"",
       "content":"• Stand at the back of the person chocking, and put one foot in front of another\n• Using your two arms hug the person from the back \n• Find the belly button of the person with your fingers, and add the other hand on top of it\n• After you put one hand on another, strongly pull your hands inwards and up.",
       "isMain":true
@@ -718,14 +718,14 @@
     },
     {
       "title":"BACK BLOWS FOR CHOKING INFANT",
-      "imageUrl":"",
+      "imageUrl":"assets/images/child_blow.png",
       "vedioUrl":"",
       "content":"• Hold the infant by his/her chest on your hands and support the child's chin with your fingers.\n• Put the infant faced down by his/her chest then blow its back with your palms with a little strength",      
       "isMain":true
     },
     {
       "title":"CHEST PRESSURE FOR CHOKING INFANT",
-      "imageUrl":"",
+      "imageUrl":"assets/images/child_chest_pressure.png",
       "vedioUrl":"",
       "content":"• Hold the infant by its back on your hand, support his/her head with your fingers\n• Then lower your hands and tilt the infant so his/her head could lower. \n• Now with your other hand two fingers press his/her chest bone and press down to 4 cm then release.\n• Five back blows and five chest pressure till the infant coughs, cries or till he/she loses consciousness",
       "isMain":true
@@ -775,7 +775,7 @@
     },
     {
       "title":"ህልፅ ግፊት",
-      "imageUrl":"",
+      "imageUrl":"assets/images/h_maneuver.png",
       "vedioUrl":"",
       "content":"• ህልፅ ግፊት ለመስጠት ከተጎጂው ጀርባ ይቁሙ፤ አንዱን እግሮን ከሌላኛው ፊት ያኑሩ\n• በሁለቱንም እጆ የተጎጂውን ወገብ ይቀፉ (ህጻን ከሆነ ደግሞ ይንበርከኩና የህጻኑን ወገብ በሁለቱም እጆ ይቀፉ \n• በጣቶ የተጎጂውን እምብርት ይፈልጉና ጣቶን በዚያ ያሳርፉ፤ ከዚያም አውራ ጣቶን ሌሎች ጣቶች ላይ በመደረብ እጆን ጠበቅ አድርገው ይጨብጡ\n• እጆን በሌላኛው እጆ ይደርቡና በፍጥነት ወደ ውስጥና ወደ ላይ በኃይል ይግፉት፡፡",
       "isMain":true
@@ -789,14 +789,14 @@
     },
     {
       "title":"የጨቅላ ጀርባ ድለቃ",
-      "imageUrl":"",
+      "imageUrl":"assets/images/child_blow.png",
       "vedioUrl":"",
       "content":"• እጆን በህጻኑ ደረት ላይ አሳልፈው በጣቶቹ የህጻኑን አገጭ ይደግፉ\n• ህጻኑን በደረቱ ዘቅዝቀው በታፋዎት ላይ ካረጉ በኃላ በመዳፎ ጠንከር አድርገው በትከሻው መሃል ይምቱት፡፡",      
       "isMain":true
     },
     {
       "title":"የደረት ግፊት",
-      "imageUrl":"",
+      "imageUrl":"assets/images/child_chest_pressure.png",
       "vedioUrl":"",
       "content":"• በአንድ እጆ ጨቅላው በጀርባ በኩል ይቀፉት፤ በጣቶ ጭንቅላቱን ይደግፉት\n• እጅዎን ወደ ታች ዘቅዘቀ ያድርጉትና የህጻኑን ጭንቅላት ዝቀ እንዲል ያድርጉት \n• ሁለት ጣቶን በደረት አጥንቱ ላይ ያድርጉና ወደ 4 ሳ.ሜ የሚሆን ወደ ታች ጫን ያርጉትና ይልቀቁት፡፡\n• አምስት ጀርባ ድለቃ እና አምስት የደረት ግፊት በየተራ ህጻኑ በኃይል እስኪስል፤ እስኪያለቅስ ወይም እራሱን እስኪስት ድረስ ያድርጉ፡፡ ራሱን ከሳተና ምንም አይነት እንቅስቃሴ የማያሳይ ከሆነ ደግሞ ከታች የተገለጸውን ይተግብሩ፡፡",
       "isMain":true
@@ -841,7 +841,7 @@
     },
     {
       "title":"hiibbaa karaa booddee miidhamaaf kennamu",
-      "imageUrl":"",
+      "imageUrl":"assets/images/h_maneuver.png",
       "vedioUrl":"",
       "content":"• Dhiibbaa kana laachuuf dugda duuba miidhamtichaa dhaabadhaa, miila keessan tokko isa biraa fuldura godhaa\n• Harka keessan lamaaniin dugda miidhamtichaa haammadhaa (daa'ima yoo ta'e jilbiifachuudhaan dugda isaanii harka lamaan haammachuu.) \n• Quba keesaniin handhuura miidhamtichaa barbaaduun argachuu, sanaan booda quba guddaa quboota biroo irraa gochuudhaan harka keessan jabeessitanii walitti qabuu\n• harka keessan kaan immoo isa duraa irra kaayuudhaan saffiisaan gara keessaafi gara olii humnaan dhiibuu",
       "isMain":true
@@ -855,14 +855,14 @@
     },
     {
       "title":"ukkuttaa dugdaa daa'imaniif",
-      "imageUrl":"",
+      "imageUrl":"assets/images/child_blow.png",
       "vedioUrl":"",
       "content":"• Harka keessan qoma daa'imaa jala dabarsuun qubootaan boqoo(chin) daa'imaa qabaa.\n• Eerga daa'ima qomo isaattin gadi gombiffitanii sarba keessan irra gootani booddee barruu keessaniin gateetti isaa gidduu jabeesaatii rukutaa.",      
       "isMain":true
     },
     {
       "title":"Dhiibbaa Qomaa",
-      "imageUrl":"",
+      "imageUrl":"assets/images/child_chest_pressure.png",
       "vedioUrl":"",
       "content":"• Daa'imini akka harka keessan isa tokko irra kara dugdaan ciisu gochuun; mataa isaa quboota keessaniin qabadhaa.\n• Sanaan booda gadi gombisaatii akka mataan daa'imaa gara gadii aanu godhaa. \n• Quba keessan lamaan lafee qomaa irra godhaatii, waan saantimeetira afur (4cm) ta‟u gadi dhiibaatii gadhiisaa.\n• Rukkuttaa dugdaa yeroo shani fi dhiibbaa qoma yeroo shani wal-jijjiiraa hanga daa'imni humnaan qufa'u, boo'u ykn of-wallaalutti itti fufaa. Yoo daa'imini of-wallaale fi sochii tokkoyyuu kan hinagarsiifne ta'e waan armaan gaditti ibsamee godha.",
       "isMain":true
@@ -1169,7 +1169,7 @@
     },
     {
       "title":"SPECIAL CASE RECOVERY POSITION FOR SUSPECTED SPINAL INJURY",
-      "imageUrl":"",
+      "imageUrl":"assets/images/unconcious1.png",
       "vedioUrl":"",
       "content":"If you suspect a spinal injury and need to place the casualty in the recovery position, try to keep the spine straight. &lt;br>&lt;\nIf you have a helper, one of you should steady the head while the other turns the casualty (right).",      
       "isMain":false
@@ -1197,21 +1197,21 @@
     },
     {
       "title":"A-AIRWAY",
-      "imageUrl":"",
+      "imageUrl":"assets/images/abcde_a.png",
       "vedioUrl":"",
       "content":"•Let us call out the name of the victim or ask their name.\n• If there is no answer, let's examine the airways.\n• Open the mouth carefully (as shown in the picture) by holding the chin.\n• If there is any blood clots, broken tooth and any foreign body in the mouth cavity, lets try to remove it only if it is visible.\n• When examining the airway, care must be taken not to move the spine as much as possible. If there is a neck collar, it is necessary to apply it ; If not, let's roll the soles of our shoes tightly around the neck (as shown in the picture)",      
       "isMain":true
     },
     {
       "title":"B–BREATHING",
-      "imageUrl":"",
+      "imageUrl":"assets/images/abcde_b.png",
       "vedioUrl":"",
       "content":"• After inspecting the airway and tightening the collar, make sure the victim is breathing; We do this by hearing, seeing, and touching.\n• See if the patient's chest is raised and lowered to see.\n• Listen carefully as the air comes in and out (as shown in the picture)\n• When you touch, notice the air coming out of the person on your cheek and touching you",
       "isMain":true
     }, 
     {
       "title":"C-CIRCULATION",
-      "imageUrl":"",
+      "imageUrl":"assets/images/abcde_c.png",
       "vedioUrl":"",
       "content":" Make sure the injured person has a pulse around major blood vessels by palpating. If the victim is an adult, make sure there is pulse around the neck or the groin area. If it is a child, check z pulse inside the elbow(as shown in the picture). If you hear a pulse when pressed in these places, it means that the person has blood circulation; if not, there is no blood transfusion. So start CPR.",
       "isMain":true
@@ -1259,21 +1259,21 @@
     },
     {
       "title":"አ፡ የአየር ቱቦ፡",
-      "imageUrl":"",
+      "imageUrl":"assets/images/abcde_a.png",
       "vedioUrl":"",
       "content":"• ጉዳት የደረሰበትን ሰው ጮክ ብለን ስሙን እንጥራ፡፡\n• ከዚያም ምንም አይነት መልስ ማይሰጠን ከሆነ የአየር መተላለፊያ አካላቱን እንመርምር፡፡\n• ይህም በጥንቃቄ የአገጩን ጠርዝ በመያዠ አፉን ይክፈቱ (በምስሉ እንደሚታየው)፡፡\n• ውስጡ ያለ  የረጋ ደም፣ የጥርስ ስባሪ፣ እና  ማንኛውም በአድ ነገር ካለና በቅርብ እርቀት ላይ ከሆን እናውጣ፡፡\n• ይሁንና ወደ ውስጥ ያለና በጣቶቻችን ማንደርስበት ከሆን ለማውጣት አይጣሩ፡፡\n• የአየር  ቱቦን  ስንመረምር  በተቻለ  መጠን  የአከርካሪ  አጥንቶቸን  እንዳይንቀሳቀሱ መጠንቀቅ  ያስፈልጋል፡፡  የአንገት  መደገፊያ  ካለ  ማሰር  ያስፈልጋል፤  ከሌለም  የጫማችን ሶል ገልብጠን በአንገቱ ግራና ቀኝ ጠበቅ አድርገን እንሰር፡፡\n• የአንገት  መደገፊያ  አስተሳስር፡የአንገት  መደገፊያ  ለማሰር  አጠገቦ  ያለ  ሰው  እርዳታን ይጠይቁ፡፡ አንድ ሰው ከተጎጂው በራስጌ በኩል ይቆምና ሁሉቱንም እጆቹ ዘርግቶ ጣቶቹን በተጎጂው ትከሻ ስር ያሳልፍ፤ በክንዶቹ ደግሞ የተጎጂው አንገት እንዳይንቀሳቀስ ያድርግ፡፡ ሌላ ሰው ደግሞ ትክክለኛወን መደገፊያ በመለካት አንገቱ ላይ ይሰር፡፡ ተስተካክሎ በተያዘ አንገት  ከአገጩ  እስከ  ደረት  አጥንቱ  ያለውን  ርቀት  በመለካትና  የአንገት  መደገፊያውን በተመሳሳይ አቅጣጫ በመለካት ትክክለኛውን መጠን መምረጥ ይቻላል፡፡",      
       "isMain":true
     },
     {
       "title":"መ፡ መተንፈስ፡",
-      "imageUrl":"",
+      "imageUrl":"assets/images/abcde_b.png",
       "vedioUrl":"",
       "content":"• የአየር ቱቦውን ከመረመርንና የአንገት መደገፊያን ካሰርን  በኃላ  እየተነፈሰ  መሆኑን  እናረጋግጥ፤ ይህንንም ምናደርገው በመስማት፣ በማየት እና በመንካት ነው፡፡\n• ማየት ሲባል የታማሚውን ደረት ከፍ ዝቅ እያለ መሆኑን ይመልከቱ፡፡\n• መስማት ሲባል ደግሞ አየር ሲወጣና ሲገባ ጠጋ በለው በምስሉ እንደሚታይው ያዳምጡት፡፡\n• መንካት ስንል ደግሞ ጉንጮት ላይ ከግለሰቡ የሚወጣውን አየር ሲያርፍና ሲነካዎት ያስተውሉ፡፡",
       "isMain":true
     }, 
     {
-      "title":"የደም ዝውውር፡",
-      "imageUrl":"",
+      "title":"ዝ፡ የደም ዝውውር፡",
+      "imageUrl":"assets/images/abcde_c.png",
       "vedioUrl":"",
       "content":" ጉዳት  የደረሰበት  ሰው  የደም  ዝውውር  እንዳለው  ትልልቅ  የደም  ስሮችን  ነክተው ያረጋግጡ፤  ይህንንም  ለማድረግ  አዋቂ  ከሆነ  አንገቱ  ስር  ወይም  ብሽሽቱ  ስር  ጨቅላ ከሆነ ደግሞ በውስጥ ክርን በኩል የደም ዝውውር እንዳለው ያረጋግጡ፡፡ እነኚህ ቦታዎች ላይ ሲጫኑ የስር ትርታ ከሰሙ፣ ግለሰቡ የደም ዝውውር አለው  ማለት ነው፤ ከሌለው ደግሞ  የደም  ዝውውር  የለውም  ማለት  ነው፡፡  ስለዚህ  እስትንፋስ  መስጠት  ይጀምሩ (ለበለጠ እስትንፋስ መስጠት የሚለውን ይመልከቱ)",
       "isMain":true
@@ -1323,22 +1323,22 @@
       "isMain":true
     },
     {
-      "title":">A. Ujummoo Qilleensaa:",
-      "imageUrl":"",
+      "title":"A. Ujummoo Qilleensaa:",
+      "imageUrl":"assets/images/abcde_a.png",
       "vedioUrl":"",
       "content":"• Nama miidhaan irra gahe sagalee ol kaafnee waamna \n• Ergasiin booda deebii kamiyuu yoo nuf hin deebisne qaamolee haargansuu qoranna.\n• Kunis of eeganoodhaan areeda/malloolee isaa qabuun afaan isaa nii banna. (akka fakkii irratti mul‟atutti).\n• Afaan keessa dhiigni itite, ilkeen cabe fi wanti biraa kamiyyuu alagaa ta‟e yoo jiraate fi dhihoo yoo ta‟e kessaa baasi.\n• Haa ta‟uu malee wantichi gara keessaa yoo jiraate fi qubaan itti hin geenyu yoo ta‟e baasudhaaf hin yaalin.\n• Qaamolee haargansuu gaafa qooranu lafeeleen mormaa akka hin sochoone of eeguun barbaachisaadha. Wanta moorma ittin deeggarru yoo dhabnee sooli kophee kenyaa gara galchinee morma isaa mirga fi bitaa irratti jabeesine hiina. \n• Akkaataa morma deeggaruuf itti hiinu: deeggartuu morma hidhuudhaaf gargaarsa nama naannawa kee jiruu gaafadhu. Namni tokko gara mataa miidhamaa biraan dhaabatee haarka isaa lameen diriirsun quuba isaa qoma irra kaa‟udhaan ciqilee isaatiin immoo mormi dhukubsataa akka hin sochoone yaa taasisnu. Namni biraa immo deeggartuu mormaa dheerina isaa sirriitti safaruun morma isaa irratti haa hidhu. Morma sirraa‟e qabamee irratti dheerina areeda/malloolee irraa haanga lafee qoomaatti jiru safaruun deeggartuu mormaa kallattii walfakkaataan safaruun dheerina sirrii safaruun ni dand‟ama.",      
       "isMain":true
     },
     {
       "title":"B. Haarganuu:",
-      "imageUrl":"",
+      "imageUrl":"assets/images/abcde_b.png",
       "vedioUrl":"",
       "content":"• Qaamoota haargansuu eerga qorannee deeggartuu mormaa hiineen booda namtichi harganaa/ haafura baasaa akka jiru haa mirkaneessinu. Kanas mirkaneessuu kan dandeenyu dhaggeeffachuu, ilaaluu fi tuquudhaan ta‟a.\n• Ilaaluu yoo jennu qomni miidhamaa oli fi gad sochoo‟aa akka jiru ilaaluu dha.\n• Dhaggeeffachuu yoo jeenu immoo qilleensi gaafa seenuufi bahu itti siqanii caqasuudha (akka fakki irrati mul‟atuuti).\n• Tuquu yoo jennu immoo qilleensi dhukkubsataa irraa bahu mallaa kee gaafa tuqu.",
       "isMain":true
     }, 
     {
       "title":"C. Marsaa dhigaa፡",
-      "imageUrl":"",
+      "imageUrl":"assets/images/abcde_c.png",
       "vedioUrl":"",
       "content":" Namni midhaan irra gahee marsaan dhiiga isaa akka jiru ujummolee dhiigaa gurguddoo tuquun mirkaneessi. Kana gochuuf nama daa‟ima hin taaneef morma isaa jala, yoo daa‟ima ta‟e immo ciqilee gara keessaatiin marsaan dhigaa akka jiru mirkaneessi. Naannawaa qaamolee kanaa dhawannaa ujummoo dhiigaa yoo dhageese midhamaan marsaa dhiigaa ni qaba jeechuudha. Yoo hin qabaanne immoo marsaa dhiigaa hin qabu jechuudha. Kanaafuu qilleenssa kennuu jalqabi. (dabalataaf haargansuu/qilleenssa kennu kan jedhu dubbisi)",
       "isMain":true
@@ -1418,7 +1418,7 @@
 
 {
   "name":"Seizure",
-  "iconUrl":"assets/images/unconcious.png",
+  "iconUrl":"assets/images/brain.png",
   "language":"en",
   "description":[
     {
@@ -1453,7 +1453,7 @@
 
 {
   "name":"የሚጥል በሽታ",
-  "iconUrl":"assets/images/unconcious.png",
+  "iconUrl":"assets/images/brain.png",
   "language":"am",
   "description":[
     {
@@ -1488,7 +1488,7 @@
 
 {
   "name":"Gaggaba/doo",
-  "iconUrl":"assets/images/unconcious.png",
+  "iconUrl":"assets/images/brain.png",
   "language":"om",
   "description":[
     {
@@ -1572,7 +1572,7 @@
 
     {
       "title":"WHAT TO DO",
-      "imageUrl":"",
+      "imageUrl":"assets/images/bleeding_img.png",
       "vedioUrl":"",
       "content":"• Remove or cut clothing as necessary to expose the wound\n• Apply direct pressure over the wound with your fingers using a sterile dressing or clean, gauze pad. If you do not have a dressing, ask the casualty to apply direct pressure himself. If there is an object in the wound, apply pressure on either side of the object (opposite)\n• Maintain direct pressure on the wound to control bleeding. Raise and support the injured limb above the level of the casualty’s heart to reduce blood loss.\n• Help the casualty lie down—on a rug or blanket if there is one, because this will protect him from the cold. Since shock may develop, raise and support his legs so that they are above the level of his heart. Ask a helper to call for emergency help, and to give the dispatcher details of the site and extent of the bleeding\n• Secure the dressing with a bandage that is firm enough to maintain pressure, but not so tight that it impairs circulation\n• If bleeding shows through the dressing, apply a second one on top of the first. If blood seeps through the second dressing, remove both and apply a fresh one, ensuring that pressure is applied accurately at the point of bleeding\n• Support the injured part in a raised position with a sling and/or bandage. Check the circulation beyond the bandage every ten minutes. If the circulation is impaired, loosen the bandage and reapply\n• Monitor and record vital signs—level of response, breathing, and pulse —while waiting for help to arrive",      
       "isMain":true
@@ -1619,7 +1619,7 @@
 
     {
       "title":"የመድማት የመጀመሪያ እርዳታ",
-      "imageUrl":"",
+      "imageUrl":"assets/images/bleeding_img.png",
       "vedioUrl":"",
       "content":"• እርሶ ላይ አደጋ ሊፈጥር የሚችል ነገር እንደሌለ ያረጋግጡ\n• ተጨማሪ እርዳታ ይጣሩ እንዱሁም ወደ አምቡላነስ  ላይ ይደውሉ\n• ራሶን ለመከላከል ጓንት ወይም ሌላ መከላከያ ያጥልቁ\n• ተጎጂውን እንደሚመቸው ያስተኙት/ያስቀምጡት\n• ምን እንደተፈጠረ ያስረዱትና በተቻለ መጠን ያረጋጉት\n• መድማቱን ለማቆም ወይም ለመቀነስ ከታች በተገለጽው መልኩ ይሞክሩ፡፡\n• በንጽ ጨርቅ/ባንዴጅ ቁስሉን ተጭነው ይያዙ\n• ባንዴጁን በቁስሉ ዙሪያ መጠቅለልም ይችላሉ (ይህንን ሲያደርጉ ጠበቅ አድርገው ይሰሩት ነገር ግን በጣም አጥብቀው ከቁስሉ በታች ያለን የደም ዝውውር እንደምማያቋርጥ ያረጋግጡ )\n• የተሸፈነው ጨርቅ በደም ከራሰ በላዩ ላይ ሌላ ይደርቡበት\n• በአካባቢው ላይ ባለ ጨርቅ፣ ላስቲክ ወይም ሌላ መሸፈኛ ሰውነቱን እንሸፍንና ሙቀትን እንፍጠርለት፡፡\n• የተጎጂውን ንቃትና አተነፋፈስ ህክምና እስኪደርስ ድረስ ይከታተሉ፡፡\n• ምግብም ሆነ መጠጥ አይስጡዋቸው\n• አጥብቆ ማሰር (መጠፍነግ):እየደማ ያለን ቦታ ተጭነን ማቆም ካልቻልን ከሚደማበት ስፍራ ከፍ ብለን በኃይል በማሰር (በመጠፍነግ) የደም ዝውውርን በመግታት የሚፈሰውን ደም ለመቀነስ መሞከር እንችላለን፡፡አጥብቆ ማሰር እንደ ጥቅሙ ሁሉ በትክክል ካልተተገበረ የከፋ ጉዳት ሊያስከትል ይችላል፡፡ የደም ዝውውርን ለረጅም ሰዓታት ሲቋረጥ ከታች ያለውን የሰውነት ክፍል ሙሉ በሙሉ ኦክስጅን ሊያጣና ሊሞት ይችላል፡፡አጥብቀው ያሰሩበትን ሰዓት መዝግበው ይያዙ፤ ከ2 ሰዐት በላይ ታስሮ መቆየት ስለሌለበት በፍጥነት ወደ ህክምና ተቋም የሚሄድበትን መንገድ ያመቻቹ፡፡",      
       "isMain":true
@@ -1666,7 +1666,7 @@
 
     {
       "title":"Gargaarsa jalqabaa dhiiguuf godhamu ",
-      "imageUrl":"",
+      "imageUrl":"assets/images/bleeding_img.png",
       "vedioUrl":"",
       "content":" Miidhama dhiigaa jiru yoo dafnee dhiiguu to‟achuu baanne lubbuusaaf sodaachisaa tahuu dandaha.\n• Wanti balaa isinirra fidu akka hin jiraanne mirkaneeffadhaa\n• Gargaarsa dabalataaf sakatta‟aa akkasumaas gara ambulaansii bilbilaa\n• Mataa keessan of ittisuuf gilaavii ykn ittisoo biraa kaawwadhaa, miidhamaa akka mijjaahuufitti ciibsaa/teessisaa \n• Maaltu akka uumame ibsaafii tasgabbeessaa \n• Dhiiguu dhaabuuf ykn hir‟isuuf bifa ibsameen yaalaa \n• Hucuu qulqulluu ykn baandeejiin madaa cuqqaalaa qabaa \n• Baandeejii naannoo madaattiis maruu dandeessu (kana yoo gootan jabeessaa hidhaa garuu hedduu jabeessitanii marsaa dhiigaa kan achiin gadii akka hin kunne mirkaneefadhaa) \n• Hucuun cuqaalleen yoo dhiigaan cuuphamte kan biraa gubbaan itti dabalaa.\n• Hucuun ykn laastika naannoo san jiruun ykn haguugduu biraa qaama haguugaatii ho‟a uumaaf. \n• Dammaqinsaa fi hafuurbaafannaa miidhamaa hanga yaala argatutii hordofaa. \n• Nyataas tahe dhugaatii hin kanninaaf.\n• Jabeessanii hidhuu Iddoo nu dhiigaa jirtu yoo jabeessinee qabuu hin dandeenye iddoo sanirraa ol jennee jabeessinee hidhuun marsaa dhiigaa dhoorkuun dhiiga faca‟u irrisuuf yaaluu ni dandeenya. Marsaan dhiigaa yaroo dheeraaf yoo cite qaamni bakka hidhamee gaditti jiru guutumaatti oksijiinii dhabuun du‟uu dandaha. Yeroo itti jabeessitanii hiitan galmeessaa qabadhaa, sa‟aatii 2 ol hidhamee turuu waan hin qabneef daddaffiin akkaataa itti gara mana yaalaa geeffamu mijjeessaa",      
       "isMain":true
@@ -2896,7 +2896,7 @@
     },
     {
       "title":"WHAT TO DO",
-      "imageUrl":"",
+      "imageUrl":"assets/images/poisoning_img.png",
       "vedioUrl":"",
       "content":"• Call to an ambulance if the casualty shows these symptoms\n• Loss of consciousness\n• Breathing difficulties\n• Seizures\n• Bloody vomiting or diarrhea\n• Chest pain\n• Aggressiveness\n• Discard the poison carefully\n• Do not give any food or drinks to casualty\n• Do not induce vomiting by your hands\n• Till an ambulance service arrive, record the type of poison, amount of poison and the time when the casualty took the poison\n• If the casualty is conscious and do not have bloody vomiting, you can give him crushed charcoal mixed with clean water if you get the patient within 4 hours after taking the poison. This should be done only if you can’t get to health centers in a short period of time.",      
       "isMain":true
@@ -2948,7 +2948,7 @@
     },
     {
       "title":"የመመረዝ የመጀመሪያ እርዳታ",
-      "imageUrl":"",
+      "imageUrl":"assets/images/poisoning_img.png",
       "vedioUrl":"",
       "content":"• ተጠቂው የሚከተሉት ምልክቶች ካሉት ወደ አምቡላንስ ይደውሉና እርዳታን ይጠይቁ\n• ራሱን ከሳት\n• ለመተንፈስ ከተቸገረ\n• ካንቀጠቀጠው (እንደ የሚጥል በሽታ)\n• ደም ካስመለስው/ካስቀመጠው\n• ደረት ውጋት/ ህመም ካለው\n• እማይተባበርና አደገኛ ጸባይ ካለው\n• የመርዙን ምንጭ እርሶ ላይ አደጋ በማያደርስ መልኩ ያስወግዱ\n• ለተጠቂው የሚበላም ሆነ የሚጠጣን አይስጧቸው\n• በተለምዶ እንደሚደረገው መርዙን እንዲያስታውከው ለማድረግ የሚደረጉ እንጥል አካባቢ መንካት፤ እንዲሁም ለማርከሻ ተብሎ የሚሰጥ ወተት መጠቀም ተገቢ አይደለም\n• ወደ አምቡላንስ ደወለው እርዳታ እስኪመጣ፣ ተጠቂው ምን አይነት መድሃኒት፣ ምን ያህል መጠን እንደወሰደ፣ መቼ እንደተወሰደ ለማጣራት ይሞክሩ፡፡\n• ታማሚው ራሱን የሳተ ካልሆነ፣ ደም የማያስመልሰው እንዲሁም መርዙን ከወሰደ 4 ሰዓት ካላለፈው የተፈጨ ከሰል በውሃ በጥብጠን እንስጠው፡፡ነገር ግን ይህን ሲያረጉ ወደ ህክምና ተቋም በፍጥነት መድረስ ማይችሉ ከሆነ ብቻ መሆን ይኖርበታል፡፡",      
       "isMain":true
@@ -3002,7 +3002,7 @@
     },
     {
       "title":"Summaa'uu gargarsaa yala dulaa",
-      "imageUrl":"",
+      "imageUrl":"assets/images/poisoning_img.png",
       "vedioUrl":"",
       "content":"• Midhamaan mallattoolee armaan gaditti eeraman kan agarsiisu yoo ta'e gara 907 tti bilbilaa gargaarsa gaafadhaa.\n• Yoo of wallaale \n• Hargansuuf yoo rakkkate\n• Gaggaba yoo qabaate \n• Dhiiga haqqisiisa ykn teessisa (yaasa) yoo ta'e \n• Waraansa laphee yoo qabaate \n• Ajaja hin hordofu ykn amala badaa yoo qabaate • Summicha karaa isin hin miineen dhabamsiisaa \n• Waan nyaatamus ta'ee waan dhugamu hin kenninaafii \n• Summiin fudhatame kan nama gubu yoo ta'e afaanii Kaasee hanga garaachaatti waan gubuuf haqqisiisuuf yaaluun hin barbaachisu. \n• Akka barametti summicha akka ol deebisee haqqisuuf huuba qoonqoo Bira tuquu fi qabbaneessuuf jedhanii aannan kennuufiin sirrii miti. \n• Gara ambulansii tti bilbiluun hanga gargaarsi isin qaqqabutti miidhamaan gosa summii kam, hangamii fi yoom akka fudhate adda baafadhaa.\n• Miidhamaan yoo of wallaale, dhiiga kan haqqisu yoo ta'ee fi akkasumas erga summicha fudhatee sa‟aatii afur kan hin guunne yoo ta'e cilee (kasala) bishaaniin bulbulaa kennaafii (Kunis gara mana yaalaa gahuuf yeroo dheeraa kan isinitti fudhatuu fi gargaarsa argachuuf kan hin dandeenye yoo ta'e qofa haa ta'u).",      
       "isMain":true
