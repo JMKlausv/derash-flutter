@@ -23,14 +23,13 @@ class HospitalAdapter extends TypeAdapter<Hospital> {
       phone: fields[2] as String,
       facebook: fields[3] as String,
       telegram: fields[4] as String,
-      language: fields[5] as String,
     )..distance = fields[8] as double;
   }
 
   @override
   void write(BinaryWriter writer, Hospital obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(7)
       ..writeByte(1)
       ..write(obj.location)
       ..writeByte(2)
@@ -39,8 +38,6 @@ class HospitalAdapter extends TypeAdapter<Hospital> {
       ..write(obj.facebook)
       ..writeByte(4)
       ..write(obj.telegram)
-      ..writeByte(5)
-      ..write(obj.language)
       ..writeByte(6)
       ..write(obj.name_en)
       ..writeByte(7)

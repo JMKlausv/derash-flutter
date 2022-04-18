@@ -67,11 +67,9 @@ void main() async {
         location: hospital['location'],
         phone: hospital['phone'],
         facebook: hospital['facebook'],
-        language: hospital['language'],
         telegram: hospital['telegram']);
     box2.add(singleHospital);
   }
-
   runApp(const MyApp());
 }
 

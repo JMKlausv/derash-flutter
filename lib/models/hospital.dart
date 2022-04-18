@@ -13,8 +13,6 @@ class Hospital extends HiveObject {
   final String facebook;
   @HiveField(4)
   final String telegram;
-  @HiveField(5)
-  final String language;
   @HiveField(6)
   final String name_en;
   @HiveField(7)
@@ -29,5 +27,5 @@ class Hospital extends HiveObject {
       required this.phone,
       required this.facebook,
       required this.telegram,
-      required this.language});
+      });
 }

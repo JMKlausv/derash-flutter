@@ -167,7 +167,7 @@ class _ProfileState extends State<Profile> {
                         const SizedBox(
                           height: 15,
                         ),
-                        user.isEmpty
+                        user.isEmpty || user.first.userName == ''
                             ? Text(
                                 AppLocalizations.of(context)!.name_hint,
                                 style: const TextStyle(fontSize: 25),

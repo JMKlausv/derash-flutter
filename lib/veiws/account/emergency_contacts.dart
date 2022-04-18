@@ -99,7 +99,7 @@ class EmergencyContacts extends StatelessWidget {
                                     child: ListTile(
                                         onTap: () async {
                                           await launch(
-                                              'tel:${emergencyContact['name']}');
+                                              'tel:${emergencyContact['phone']}');
                                         },
                                         title: Text(emergencyContact['name']),
                                         subtitle:
